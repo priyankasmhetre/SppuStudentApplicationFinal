@@ -22,13 +22,13 @@ class _CreateprofileState1 extends State<Createprofile1>{
         children:<Widget> [
 
           Padding(
-            padding:EdgeInsets.fromLTRB(30, 50,30, 30),
+            padding:EdgeInsets.fromLTRB(20, 20,20, 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
-                  height: 50,
-                  width: 50,
+                  height: 20,
+                  width: 20,
                   child: Icon(Icons.arrow_back_ios,size: 24,color: Colors.black54,),
                   decoration: BoxDecoration(
                     border:Border.all(color: Colors.black),
@@ -36,19 +36,19 @@ class _CreateprofileState1 extends State<Createprofile1>{
                   ),
                 ),
                 Text(
-                  "Profile Deatails",
+                  "Profile Details",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Container(height: 30,width: 30,),
+                Container(height: 20,width: 20,),
 
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(0,0,0,50),
+            padding: const EdgeInsets.fromLTRB(0,0,0,20),
             child: Stack(
               children:<Widget> [
                 CircleAvatar(
@@ -57,8 +57,8 @@ class _CreateprofileState1 extends State<Createprofile1>{
                 ),
                 Positioned(bottom: 1,right: 1,
                     child:Container(
-                      height: 40,
-                      width: 40,
+                      height: 20,
+                      width: 20,
                       child: Icon(Icons.add_a_photo,color: Colors.white,),
                       decoration: BoxDecoration(
                         color: Colors.redAccent,
@@ -85,12 +85,12 @@ class _CreateprofileState1 extends State<Createprofile1>{
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height:60,
+                    height:40,
                     child: Align(
                       alignment: Alignment.centerLeft,
 
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(20,25,20,4),
+                        padding: const EdgeInsets.fromLTRB(20,10,20,4),
                         child: Text(
                           "Name",
                           style:TextStyle(
@@ -109,14 +109,14 @@ class _CreateprofileState1 extends State<Createprofile1>{
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 60,
+                    height: 40,
                     child: Align(
                       alignment: Alignment.centerLeft,
 
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(20,25,20,4),
+                        padding: const EdgeInsets.fromLTRB(20,10,20,4),
                         child: Text(
-                          "Name",
+                          "Roll No",
                           style:TextStyle(
                             color: Colors.red,
                           ),
@@ -133,14 +133,14 @@ class _CreateprofileState1 extends State<Createprofile1>{
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 60,
+                    height: 40,
                     child: Align(
                       alignment: Alignment.centerLeft,
 
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(20,25,20,4),
+                        padding: const EdgeInsets.fromLTRB(20,10,20,4),
                         child: Text(
-                          "Name",
+                          "Course Name",
                           style:TextStyle(
                             color: Colors.red,
                           ),
@@ -157,14 +157,14 @@ class _CreateprofileState1 extends State<Createprofile1>{
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 60,
+                    height: 40,
                     child: Align(
                       alignment: Alignment.centerLeft,
 
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(20,25,20,4),
+                        padding: const EdgeInsets.fromLTRB(20,10,20,4),
                         child: Text(
-                          "Name",
+                          "Semester",
                           style:TextStyle(
                             color: Colors.red,
                           ),
@@ -181,14 +181,14 @@ class _CreateprofileState1 extends State<Createprofile1>{
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 60,
+                    height: 40,
                     child: Align(
                       alignment: Alignment.centerLeft,
 
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(20,25,20,4),
+                        padding: const EdgeInsets.fromLTRB(20,10,20,4),
                         child: Text(
-                          "Name",
+                          "Year",
                           style:TextStyle(
                             color: Colors.red,
                           ),
@@ -205,14 +205,14 @@ class _CreateprofileState1 extends State<Createprofile1>{
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 60,
+                    height: 40,
                     child: Align(
                       alignment: Alignment.centerLeft,
 
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(20,25,20,4),
+                        padding: const EdgeInsets.fromLTRB(20,10,20,4),
                         child: Text(
-                          "Name",
+                          "Email Address",
                           style:TextStyle(
                             color: Colors.red,
                           ),
