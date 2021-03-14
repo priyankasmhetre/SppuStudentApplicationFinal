@@ -18,9 +18,7 @@ class _CreateprofileState1 extends State<Createprofile1>{
       body:
 
       Column(
-
         children:<Widget> [
-
           Padding(
             padding:EdgeInsets.fromLTRB(20, 20,20, 20),
             child: Row(
