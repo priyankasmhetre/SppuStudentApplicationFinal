@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
 
 
-class teacherprofile extends StatefulWidget{
+class update_teacher_profile extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return _teacherprofileState();
+    return _updateteacherprofileState();
   }
 }
-class _teacherprofileState extends State<teacherprofile>{
+class _updateteacherprofileState extends State<update_teacher_profile>{
   get decoration => null;
 
   @override
@@ -36,7 +36,7 @@ class _teacherprofileState extends State<teacherprofile>{
                     ),
 
                     Text(
-                      "Profile Details",
+                      " Teacher Profile Details",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -86,30 +86,6 @@ class _teacherprofileState extends State<teacherprofile>{
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        height:40,
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(20,10,20,4),
-                            child: Text(
-                              "Name",
-                              style:TextStyle(
-                                color: Colors.red,
-                              ),
-                            ),
-                          ),
-
-                        ),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),border: Border.all(width: 1.0,color: Colors.black)
-
-                        ),
-                      ),
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
                         height: 40,
                         child: Align(
                           alignment: Alignment.centerLeft,
@@ -132,55 +108,7 @@ class _teacherprofileState extends State<teacherprofile>{
                       ),
                     ),
 
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 40,
-                        child: Align(
-                          alignment: Alignment.centerLeft,
 
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(20,10,20,4),
-                            child: Text(
-                              "University tecaher Id No",
-                              style:TextStyle(
-                                color: Colors.red,
-                              ),
-                            ),
-                          ),
-
-                        ),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),border: Border.all(width: 1.0,color: Colors.black)
-
-                        ),
-                      ),
-                    ),
-
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 40,
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(20,10,20,4),
-                            child: Text(
-                              "Blood Group",
-                              style:TextStyle(
-                                color: Colors.red,
-                              ),
-                            ),
-                          ),
-
-                        ),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),border: Border.all(width: 1.0,color: Colors.black)
-
-                        ),
-                      ),
-                    ),
 
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -210,13 +138,13 @@ class _teacherprofileState extends State<teacherprofile>{
                       alignment: Alignment.center,
                       child: Container(
                         height: 40,
-                        width: 70,
+                        width: 100,
                         child:Align(
                           alignment: Alignment.bottomLeft,
 
                           child: Text(
 
-                            "Save",
+                            "Update",
                             style: TextStyle(
                               color: Colors.white70,
                               fontSize: 30,
@@ -238,10 +166,6 @@ class _teacherprofileState extends State<teacherprofile>{
               ),
               ),
             ],
-
-
-
-
 
           ),
         ),
