@@ -26,7 +26,7 @@ class _CreateprofileState extends State<Createprofile>{
     body:SingleChildScrollView(
 
 
-        
+
     child: Container(
     height: _screenSize.height * 2.0,
     child: Column(
@@ -142,6 +142,8 @@ class _CreateprofileState extends State<Createprofile>{
     Padding(
     padding: const EdgeInsets.all(8.0),
     child: Container(
+
+
     height: 40,
     child: Align(
     alignment: Alignment.centerLeft,

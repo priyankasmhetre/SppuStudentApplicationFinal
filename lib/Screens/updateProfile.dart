@@ -180,6 +180,8 @@ class updateprofileState extends State<updateProfile>{
                             onChanged: (newValue){
                               setState(() {
                                 valueChoosen = newValue;
+
+                                
                               });
                             },
                             items: listitems.map((valueitems) {
