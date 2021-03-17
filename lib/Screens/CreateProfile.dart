@@ -24,9 +24,6 @@ class _CreateprofileState extends State<Createprofile>{
     return  Scaffold(
 
     body:SingleChildScrollView(
-
-
-
     child: Container(
     height: _screenSize.height * 2.0,
     child: Column(

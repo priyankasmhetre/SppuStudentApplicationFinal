@@ -1,31 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
-class HomeScreen extends StatefulWidget{
+class  TeacherHomeScreen extends StatefulWidget{
 
   @override
   State<StatefulWidget> createState() {
-    return _HomeScreenState();
+    return _TeacherHomeScreenState();
 
   }
 
 }
 
-class _HomeScreenState extends State<HomeScreen>{
+class _TeacherHomeScreenState extends State<TeacherHomeScreen>{
   @override
   Widget build(BuildContext context) {
     var size=MediaQuery.of(context).size;
     // TODO: implement build
     return Scaffold(
       appBar:AppBar(
-         title: Row(mainAxisAlignment: MainAxisAlignment.center,
-           children: [
-             Image.asset("assets/images/logo.jpeg",
-               height: 30,alignment: Alignment.center,),
+        title: Row(mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset("assets/images/logo.jpeg",
+              height: 30,alignment: Alignment.center,),
 
 
-           ],
-         ),
+          ],
+        ),
 
         backgroundColor: Colors.cyan,
         actions: [
@@ -57,44 +57,29 @@ class _HomeScreenState extends State<HomeScreen>{
             ListTile(
               title: Text("Home"),
               leading: Image.asset("assets/images/Home_page.jpeg",
-              height: 30,),
+                height: 30,),
 
             ),
             ListTile(
               title: Text("Profile"),
-               leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:30,),
+              leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:30,),
 
             ),
             ListTile(
-              title: Text("exams"),
-              leading:  SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904437.svg",height:30,),
+              title: Text("                Add"),
+               //leading:  SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904437.svg",height:30,),
 
             ),
+
             ListTile(
-              title: Text("timetable"),
-              leading:SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904565.svg",height:30,),
-
-            ),
-            ListTile(
-              title: Text('Result'),
-             leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904527.svg",height:30,),
-
-
-
-            ),
-            ListTile(
-              title: Text('Attendance'),
+              title: Text(' Display Attendance'),
               leading: Image.asset("assets/images/attendence.png",
-                
+
                 height: 30,
               ),
 
             ),
-            ListTile(
-              title: Text('Fee Receipt'),
-              leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904221.svg",height:30,),
 
-            ),
             ListTile(
               title: Text('Logout'),
               leading: Icon(Icons.logout),
@@ -127,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen>{
                           child: Column(
                             children:<Widget> [
                               Image.asset("assets/images/Home_page.jpeg",
-                                ),
+                              ),
 
                               Text("Home"),
                             ],
@@ -144,50 +129,9 @@ class _HomeScreenState extends State<HomeScreen>{
                             ],
                           ),
                         ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904527.svg",height:128,),
-                              Text("Result"),
-                            ],
-                          ),
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904437.svg",height:128,),
-                              Text("Upcoming Exams"),
-                            ],
-                          ),
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904235.svg",height:128,),
-                              Text("Courses"),
-                            ],
-                          ),
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904221.svg",height:128,),
-                              Text("Fee Receipt"),
-                            ],
-                          ),
-                        ),
+
+
+
                         Card(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
@@ -196,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen>{
                             children:<Widget> [
                               SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904565.svg",height:128,),
 
-                              Text("Timetale"),
+                              Text(" Add "),
                             ],
                           ),
                         ),
@@ -208,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen>{
                             children:<Widget> [
                               Image.asset("assets/images/attendence.png",
                               ),
-                              Text("Attendence"),
+                              Text(" Display Attendence"),
                             ],
                           ),
                         ),
@@ -222,15 +166,8 @@ class _HomeScreenState extends State<HomeScreen>{
           ),
           ),
 
-
-
         ],
       ),
-
-
-
-
-
 
     );
   }
