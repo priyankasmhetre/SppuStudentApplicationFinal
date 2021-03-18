@@ -1,5 +1,6 @@
  import "package:flutter/material.dart";
 import 'package:sppu_student_application/Screens/HomeScreen.dart';
+import 'package:sppu_student_application/Screens/Registration_Student.dart';
 import 'package:sppu_student_application/Screens/TeacherHomeScreen.dart';
 import './Screens/update_teacher_profile.dart';
 import './Screens/teacherProfile.dart';
@@ -13,10 +14,11 @@ class myapp extends StatelessWidget{
     debugShowCheckedModeBanner: false,
     //  home:Createprofile(),
     //home: updateProfile(),
-    //home: teacherprofile(),
+   // home: teacherprofile(),
   //home: update_teacher_profile(),
    //home:HomeScreen(),
-    home: TeacherHomeScreen(),
+    home:Registration_Student(),
+   // home: TeacherHomeScreen(),
   );
 
 

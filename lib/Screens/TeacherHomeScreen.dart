@@ -101,61 +101,72 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen>{
               children:<Widget> [
                 Expanded(
                   child: GridView.count(
+
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10,
+                      padding: EdgeInsets.all(8),
                       primary:false,
                       children:<Widget> [
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              Image.asset("assets/images/Home_page.jpeg",
-                              ),
 
-                              Text("Home"),
-                            ],
+                         Card(
+
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+                                Image.asset("assets/images/Home_page.jpeg",
+                                ),
+
+                                Text("Home"),
+                              ],
+                            ),
                           ),
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+
+                         Card(
+
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+                                SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:128,),
+                                Text("Profile"),
+                              ],
+                            ),
                           ),
-                          child: Column(
-                            children:<Widget> [
-                              SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:128,),
-                              Text("Profile"),
-                            ],
-                          ),
-                        ),
 
 
 
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904565.svg",height:128,),
 
-                              Text(" Add "),
-                            ],
+                     Card(
+
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+                                SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904565.svg",height:128,),
+
+                                Text(" Add "),
+                              ],
+                            ),
                           ),
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
+
+                         Card(
+
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+                                Image.asset("assets/images/attendence.png",
+                                ),
+                                Text(" Display Attendence"),
+                              ],
+                            ),
                           ),
-                          child: Column(
-                            children:<Widget> [
-                              Image.asset("assets/images/attendence.png",
-                              ),
-                              Text(" Display Attendence"),
-                            ],
-                          ),
-                        ),
+
                       ],
                       crossAxisCount:2),
                 ),
