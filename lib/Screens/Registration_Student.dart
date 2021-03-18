@@ -9,14 +9,31 @@ class Registration_Student extends StatefulWidget{
 class _Registration_Student_State extends State<Registration_Student> {
   @override
   Widget build(BuildContext context) {
-  return Container(
-    child: Scaffold(
-
-
-
-
-
-    body: ListView(
+    return Container(
+        child: Scaffold(
+            body: Center(
+                child: Container(
+                    constraints: BoxConstraints.expand(),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(
+                              "assets/images/top_header.png",
+                            ),
+                            fit: BoxFit.cover)
+                    ),
+                    child: Center(
+                      child: Text('Set Full Screen Background Image in Flutter',
+                        textAlign: TextAlign.center, style:
+                        TextStyle(color: Colors.brown,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold),),)
+                )
+            )
+        )
+    );
+  }
+}
+ /*
       children:<Widget> [
         Container(
           height:200,
@@ -178,10 +195,12 @@ class _Registration_Student_State extends State<Registration_Student> {
 
           ],
     ),
-    ),
-  );
+    );
+  )
 
 
   }
 
 }
+
+  */

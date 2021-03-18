@@ -4,6 +4,7 @@ import 'package:sppu_student_application/Screens/Registration_Student.dart';
 import 'package:sppu_student_application/Screens/TeacherHomeScreen.dart';
 import './Screens/update_teacher_profile.dart';
 import './Screens/teacherProfile.dart';
+import './Screens/Add.dart';
 import 'package:sppu_student_application/Screens/CreateProfile.dart';
 
 
@@ -17,8 +18,8 @@ class myapp extends StatelessWidget{
    // home: teacherprofile(),
   //home: update_teacher_profile(),
    //home:HomeScreen(),
-    home:Registration_Student(),
-   // home: TeacherHomeScreen(),
+   // home:Registration_Student(),
+    home: TeacherHomeScreen(),
   );
 
 
