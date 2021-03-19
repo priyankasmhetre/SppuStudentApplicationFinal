@@ -17,8 +17,11 @@ class _HomeScreenState extends State<HomeScreen>{
     var size=MediaQuery.of(context).size;
     // TODO: implement build
     return Scaffold(
+      //backgroundColor: Color(0xff5ac18e),
+      backgroundColor:   Color(0xff5ac18e),
       appBar:AppBar(
          title: Row(mainAxisAlignment: MainAxisAlignment.center,
+
            children: [
              Image.asset("assets/images/logo.jpeg",
                height: 30,alignment: Alignment.center,),
@@ -27,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen>{
            ],
          ),
 
-        backgroundColor: Colors.cyan,
+        backgroundColor:   Color(0xcc5ac18e),
         actions: [
           Padding(
             padding: EdgeInsets.all(8.0),
@@ -56,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen>{
 
             ListTile(
               title: Text("Home"),
-              leading: Image.asset("assets/images/Home_page.jpeg",
+              leading: Image.asset("assets/images/logo1.png",
               height: 30,),
 
             ),
@@ -121,12 +124,15 @@ class _HomeScreenState extends State<HomeScreen>{
                       primary:false,
                       children:<Widget> [
                         Card(
+
                           shape: RoundedRectangleBorder(
+
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Column(
+
                             children:<Widget> [
-                              Image.asset("assets/images/Home_page.jpeg",
+                              Image.asset("assets/images/logo1.png",
                                 ),
 
                               Text("Home"),

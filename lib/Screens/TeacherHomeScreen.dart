@@ -21,7 +21,8 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.greenAccent,
+     backgroundColor:   Color(0xff5ac18e),
+
       appBar:AppBar(
         title: Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -30,7 +31,7 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
           ],
         ),
 
-        backgroundColor: Colors.cyan,
+        backgroundColor:   Color(0xcc5ac18e),
         actions: [
           Padding(
             padding: EdgeInsets.all(8.0),
@@ -66,7 +67,7 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
             ),
             ListTile(
               title: Text("Add"),
-              leading: Image.asset("assets/images/Add1.png",
+              leading: Image.asset("assets/images/Add2.png",
                 height: 30,),
                //leading:  SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904437.svg",height:30,),
 
@@ -130,7 +131,13 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
                             ),
                             
                             // ignore: deprecated_member_use
+                           child: Column(
+                             children:<Widget> [
+                               SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:128,),
 
+                               Text(" Profile "),
+                             ],
+                           ),
 
 
                               ),
@@ -149,7 +156,8 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
                             ),
                             child: Column(
                               children:<Widget> [
-                                SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904565.svg",height:128,),
+                              /*  Image.asset("assets/images/Add2.png",
+                                ),*/
 
                                 Text(" Add "),
                               ],

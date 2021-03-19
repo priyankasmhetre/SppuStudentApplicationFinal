@@ -99,7 +99,7 @@ Widget  buildId(){
           decoration: InputDecoration(
             border: InputBorder.none,
             contentPadding: EdgeInsets.only(left:12,top:14),
-            hintText: "University Id Of Student",
+            hintText: "Elligibillity No",
             hintStyle: TextStyle(
               color: Colors.black,
 
@@ -397,7 +397,7 @@ class student_State extends State<Registration_student> {
                           Loginbutton(),
                           forgotbutton(),
 
-                          
+
                         ],
                       ),
 
