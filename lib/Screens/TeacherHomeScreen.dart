@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'Add.dart';
+
 class  TeacherHomeScreen extends StatefulWidget{
 
   @override
@@ -130,17 +130,12 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
                             ),
                             
                             // ignore: deprecated_member_use
-                            child:  RaisedButton(
-                              child: Text('Add'),
-                               onPressed: () {
-                               Navigator.push(context,
-                              MaterialPageRoute(builder: (context) =>Add()),
-                           );
 
-                            },
+
+
                               ),
 
-                            ),
+                            
 
 
 

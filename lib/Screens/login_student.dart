@@ -17,7 +17,7 @@ Widget  buildEmail() {
           "Elligibillity No",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 15,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
 
           ),
@@ -70,7 +70,7 @@ Widget  buildEmail() {
             "Password",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 15,
+              fontSize:20,
               fontWeight:FontWeight.bold,
 
             ),
@@ -92,7 +92,7 @@ Widget  buildEmail() {
           ),
           height: 60,
           child: TextField(
-            keyboardType: TextInputType.emailAddress,
+           // keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
             ),
@@ -117,28 +117,28 @@ Widget  buildEmail() {
 Widget forgotbutton()
 {
   return Container(
-    alignment:Alignment.centerRight,
+    alignment: Alignment.centerRight,
     child: FlatButton(
-      onPressed: ()=>print("Forgot Password"),
+      onPressed: ()=>print("forgot password pressed"),
       padding: EdgeInsets.only(right: 0),
+
       child: Text(
-        "Forgot Password",
+        "forgot password",
         style: TextStyle(
           color: Colors.white,
-          fontSize: 15,
+          fontSize: 18,
           fontWeight:FontWeight.bold,
-
         ),
-
       ),
     ),
 
   );
 }
+
 Widget Loginbutton()
 {
   return Container(
-   padding: EdgeInsets.symmetric(vertical: 25),
+    padding: EdgeInsets.symmetric(vertical: 25),
     width: double.infinity,
 
     child: RaisedButton(
@@ -146,7 +146,7 @@ Widget Loginbutton()
       onPressed: ()=>print("Login"),
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15)
+          borderRadius: BorderRadius.circular(15)
       ),
       color: Colors.white,
       child: Text(
@@ -163,6 +163,8 @@ Widget Loginbutton()
 
   );
 }
+
+
 
 class student_State extends State<login_student> {
   @override
@@ -188,8 +190,9 @@ class student_State extends State<login_student> {
                     ]
                      ),
                    ),
-                   child: SingleChildScrollView(
+                  child: SingleChildScrollView(
                      physics: AlwaysScrollableScrollPhysics(),
+
                      padding: EdgeInsets.symmetric(
                        horizontal: 25,
                        vertical: 120,
