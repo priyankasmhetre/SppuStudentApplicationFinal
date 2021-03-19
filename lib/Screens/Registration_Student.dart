@@ -9,8 +9,7 @@ class Registration_Student extends StatefulWidget{
 class _Registration_Student_State extends State<Registration_Student> {
   @override
   Widget build(BuildContext context) {
-  return Container(
-    child: Scaffold(
+  return Scaffold(
 
 
 
@@ -21,15 +20,17 @@ class _Registration_Student_State extends State<Registration_Student> {
         Container(
           height:200,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage(
-                "assets/images/top_header.png",
-              ),
-            )
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  "assets/images/registration_page.jpeg",
+                ),
+              )
           ),
+
           child: Positioned(
             child:Stack(
+
               children:<Widget> [
                 Positioned(
                   top: 3,
@@ -45,55 +46,125 @@ class _Registration_Student_State extends State<Registration_Student> {
 
         ),
          SizedBox(height: 10,),
-        Padding(padding: EdgeInsets.symmetric(horizontal: 20),
-          child:Column(
-            children:<Widget> [
-              SizedBox(height:10,),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.fromRGBO(198,156,149,2),
-                      blurRadius: 20,
-                      offset:Offset(0,10),
+
+
+         Container(
+           color: Color(0x665ac18e),
+
+           child: Padding(
+
+             padding: const EdgeInsets.all(8.0),
+             child: Column(
+
+                children:<Widget> [
+
+
+                  SizedBox(height:10,),
+                  Container(
+
+                    decoration: BoxDecoration(
+                         color: Color(0x665ac18e),
+
+
+
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromRGBO(198,156,149,2),
+                          blurRadius: 20,
+                          offset:Offset(0,10),
+                        ),
+                    ],
                     ),
-                ],
-                ),
-                child: Column(
+                    child: Column(
 
-                  children:<Widget> [
+                      children:<Widget> [
 
-                    Container(
+                        Container(
 
-                        decoration: BoxDecoration(
-                          border:Border(bottom: BorderSide(
-                            color: Colors.grey[300],
-                          ))
-                        ),
-                        child:Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextField(
-                              decoration: InputDecoration(
-                                hintText: "Name",
-                                hintStyle: TextStyle(color: Colors.black),
-                              ),
-                            ),
-                          ),
-                        ),
-
-
-                    Container(
                             decoration: BoxDecoration(
                               border:Border(bottom: BorderSide(
                                 color: Colors.grey[300],
                               ))
-                          ),
+                            ),
                             child:Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: "Name",
+                                    hintStyle: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+
+
+                        Container(
+                                decoration: BoxDecoration(
+                                  border:Border(bottom: BorderSide(
+                                    color: Colors.grey[300],
+                                  ))
+                              ),
+                                child:Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                    hintText: "Elligibillity No",
+                                    hintStyle: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ),
+
+
+                        Container(
+
+                          decoration: BoxDecoration(
+                              border:Border(bottom: BorderSide(
+                                color: Colors.grey[300],
+                              ))
+                          ),
+
+                          child:Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: TextField(
                               decoration: InputDecoration(
-                                hintText: "Elligibillity No",
+                                hintText: "University Mail Adress",
+                                hintStyle: TextStyle(color: Colors.black),
+
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        Container(
+                          decoration: BoxDecoration(
+                              border:Border(bottom: BorderSide(
+                                color: Colors.grey[300],
+                              ))
+                          ),
+
+                          child:Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintText: "Select Department",
+                                hintStyle: TextStyle(color: Colors.black),
+
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              border:Border(bottom: BorderSide(
+                                color: Colors.grey[300],
+                              ))
+                          ),
+                          child:Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintText: "Select Course",
                                 hintStyle: TextStyle(color: Colors.black),
                               ),
                             ),
@@ -101,84 +172,30 @@ class _Registration_Student_State extends State<Registration_Student> {
                         ),
 
 
-                    Container(
-
-                      decoration: BoxDecoration(
-                          border:Border(bottom: BorderSide(
-                            color: Colors.grey[300],
-                          ))
-                      ),
-
-                      child:Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: "University Mail Adress",
-                            hintStyle: TextStyle(color: Colors.black),
-
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    Container(
-                      decoration: BoxDecoration(
-                          border:Border(bottom: BorderSide(
-                            color: Colors.grey[300],
-                          ))
-                      ),
-
-                      child:Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: "Select Department",
-                            hintStyle: TextStyle(color: Colors.black),
-
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          border:Border(bottom: BorderSide(
-                            color: Colors.grey[300],
-                          ))
-                      ),
-                      child:Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: "Select Course",
-                            hintStyle: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
 
 
-
-
-              ],
+                  ],
 
 
 
 
 
-              ),
+                  ),
 
-              ),
+                  ),
 
 
 
         ],
-              ),
+                  ),
+           ),
+         ),
 
-              ),
+
 
           ],
     ),
-    ),
+
   );
 
 

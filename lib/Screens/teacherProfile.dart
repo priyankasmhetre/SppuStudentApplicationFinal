@@ -14,6 +14,7 @@ class _teacherprofileState extends State<teacherprofile>{
   @override
   Widget build(BuildContext context) {
 
+
     final _screenSize = MediaQuery.of(context).size;
     // TODO: implement build
     return  Scaffold(
