@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'Add.dart';
 class  TeacherHomeScreen extends StatefulWidget{
 
   @override
@@ -12,18 +14,19 @@ class  TeacherHomeScreen extends StatefulWidget{
 }
 
 class _TeacherHomeScreenState extends State<TeacherHomeScreen>{
-  @override
+String valueChoose;
+List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification'];
+
+@override
   Widget build(BuildContext context) {
-    var size=MediaQuery.of(context).size;
     // TODO: implement build
     return Scaffold(
+      backgroundColor: Colors.greenAccent,
       appBar:AppBar(
         title: Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("assets/images/logo.jpeg",
               height: 30,alignment: Alignment.center,),
-
-
           ],
         ),
 
@@ -35,10 +38,6 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen>{
             child: Icon(Icons.notifications),
           ),
         ],
-
-
-
-
       ),
       drawer:Drawer(
 
@@ -56,7 +55,7 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen>{
 
             ListTile(
               title: Text("Home"),
-              leading: Image.asset("assets/images/Home_page.jpeg",
+              leading: Image.asset("assets/images/logo1.png",
                 height: 30,),
 
             ),
@@ -66,7 +65,9 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen>{
 
             ),
             ListTile(
-              title: Text("                Add"),
+              title: Text("Add"),
+              leading: Image.asset("assets/images/Add1.png",
+                height: 30,),
                //leading:  SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904437.svg",height:30,),
 
             ),
@@ -115,26 +116,33 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen>{
                             ),
                             child: Column(
                               children:<Widget> [
-                                Image.asset("assets/images/Home_page.jpeg",
+                                Image.asset("assets/images/logo.jpeg",
                                 ),
 
                                 Text("Home"),
                               ],
                             ),
                           ),
-
+                         
                          Card(
-
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Column(
-                              children:<Widget> [
-                                SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:128,),
-                                Text("Profile"),
-                              ],
+                            
+                            // ignore: deprecated_member_use
+                            child:  RaisedButton(
+                              child: Text('Add'),
+                               onPressed: () {
+                               Navigator.push(context,
+                              MaterialPageRoute(builder: (context) =>Add()),
+                           );
+
+                            },
+                              ),
+
                             ),
-                          ),
+
+
 
 
 
