@@ -5,13 +5,14 @@ class Registration_student extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     return student_State();
+
   }
 }
 Widget  buildName() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      /*Padding(
+     /* Padding(
         padding: const EdgeInsets.all(8.0),
         child: Text(
           "Name",
@@ -22,7 +23,8 @@ Widget  buildName() {
 
           ),
         ),
-      ),*/
+      ),
+        */
       SizedBox(height: 10,),
       Container(
         alignment: Alignment.centerLeft,
@@ -126,7 +128,6 @@ Widget buildEmail  (){
             color: Colors.white,
             fontSize: 15,
             fontWeight:FontWeight.bold,
-
           ),
         ),
       ),*/
