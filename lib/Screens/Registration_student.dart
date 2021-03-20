@@ -5,9 +5,9 @@ class Registration_student extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     return student_State();
-
   }
 }
+
 Widget  buildName() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,7 +47,7 @@ Widget  buildName() {
           ),
           decoration: InputDecoration(
             border: InputBorder.none,
-            contentPadding: EdgeInsets.only(left: 12, top: 14),
+            contentPadding: EdgeInsets.only(left: 12, ),
             hintText: "Name",
             hintStyle: TextStyle(
               color: Colors.black,
@@ -100,7 +100,7 @@ Widget  buildId(){
           ),
           decoration: InputDecoration(
             border: InputBorder.none,
-            contentPadding: EdgeInsets.only(left:12,top:14),
+            contentPadding: EdgeInsets.only(left:12,),
             hintText: "Elligibillity No",
             hintStyle: TextStyle(
               color: Colors.black,
@@ -153,8 +153,8 @@ Widget buildEmail  (){
           ),
           decoration: InputDecoration(
             border: InputBorder.none,
-            contentPadding: EdgeInsets.only(left:12,top:14),
-            hintText: "University Mail Adress",
+            contentPadding: EdgeInsets.only(left:12,),
+            hintText: "Mail Address Register To University",
             hintStyle: TextStyle(
               color: Colors.black,
 
@@ -170,6 +170,62 @@ Widget buildEmail  (){
 
 }
 Widget buildDepartment  (){
+  var valueChoose;
+  List listitem = [''
+      'Department of Electronic Science',
+    'Department of Instrumentation Science',
+    'Department Of Mathematics',
+    'Department of Environmental Sciences',
+    'Department of Zoology',
+    'Department of Biotechnology',
+    'Department of Geography',
+    'Department of Geology',
+    'Department of Physics',
+    'Department of Chemistry',
+    'Department of Botany',
+    'Department of Atmospheric and Space Sciences',
+    'Department of Statistics',
+    'Department of Computer Science',
+    'Department of Media and Communication Studies',
+    'Department of Microbiology',
+    'Interdisciplinary School of Health Sciences',
+    'School of Energy Studies',
+    'Interdisciplinary School of Scientific Computing',
+    'Institute of Bioinformatics Biotechnology IBB',
+    'Bioinformatics Centre',
+    'Centre for Information and Network Security CINS',
+    'Centre for Modeling and Simulation',
+    'School of Basic Medical Sciences',
+    'Department of Technology',
+    'Department of Commerce & Research Centre',
+    'Department of Management Science',
+    'Department Of Marathi',
+    'Department of Hindi',
+    'Department of English',
+    'Department of Sanskrit and Prakrit Languages',
+    'Department of Pali',
+    'Department of Dr. Babasaheb Ambedkar Studies',
+    'Centre for Advanced Studies in Sanskrit',
+    'Department of Economics',
+    'Department of History',
+    'Department of Philosophy',
+    'Department of Anthropology',
+    'Department of Psychology',
+    'Department of Politics and Public Administration',
+    'Department of Sociology',
+    'Department of Defence & Strategic Studies',
+    'Interdisciplinary School (Humanities and Social Science)',
+    'Krantijyoti Savitribai Phule Womens Studies Centre',
+    'Department of Lifelong Learning & Extension',
+    'Department of Law',
+    'Centre for Social Sciences and Humanities (CSSH)',
+    'Department of Education & Extension',
+    'Department of Physical Education',
+    'Centre for Performing Arts',
+    'Jayakar Library of Library & Information Science',
+    'Department of Library & Information Science',
+    'Department of Communication and Journalism',
+    'Skill Development Centre'];
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
@@ -185,43 +241,59 @@ Widget buildDepartment  (){
           ),
         ),
       ),*/
+
       SizedBox(height: 10,),
       Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 4,
-                offset: Offset(0,2),
-              )
-            ]
-        ),
-        height: 60,
-        child: TextField(
-          keyboardType: TextInputType.emailAddress,
-          style: TextStyle(
-            color: Colors.black87,
-          ),
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.only(left:12,top:14),
-            hintText: "select Department",
-            hintStyle: TextStyle(
-              color: Colors.black,
-
-            ),
-          ),
-        ),
-
+      child: Column(
+      children: <Widget>[
+      Padding(
+      padding: const EdgeInsets.all(0.0),
+      child: Padding(
+      padding: const EdgeInsets.fromLTRB(10,10,20,4),
+      child: Container(
+      height: 40,
+      decoration: BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(20)),border: Border.all(width: 1.0,color: Colors.white)
       ),
-
-    ],
-
+      child: DropdownButton(
+      hint: Text("Select the Department",
+      style: TextStyle(
+      color:Colors.black12,
+  ),),
+  icon: Icon(Icons.arrow_drop_down),
+  isExpanded: true,
+  style: TextStyle(
+  color: Colors.black,
+  fontSize: 14,
+  ),
+  value: valueChoose,
+  onChanged: (newValue){
+  setState(() {
+  valueChoose = newValue;
+  });
+  },
+  items: listitem.map((valueitem) {
+  return DropdownMenuItem(
+  value: valueitem,
+  child: Text(valueitem),
   );
+  }).toList(),
+  ),
+  ),
+  ),
 
+  ),
+
+
+  ],
+  )
+  )
+  ]
+  );
+  
+}
+
+void setState(Null Function() param0) {
 }
 Widget buildCourse(){
   return Column(
@@ -261,7 +333,7 @@ Widget buildCourse(){
           ),
           decoration: InputDecoration(
             border: InputBorder.none,
-            contentPadding: EdgeInsets.only(left:12,top:14),
+            contentPadding: EdgeInsets.only(left:12,),
             hintText: "Select Course",
             hintStyle: TextStyle(
               color: Colors.black,
@@ -283,6 +355,7 @@ Widget Loginbutton()
     padding: EdgeInsets.symmetric(vertical: 25),
     width: double.infinity,
 
+    // ignore: deprecated_member_use
     child: RaisedButton(
       elevation: 5,
       onPressed: ()=>print("Submit"),
@@ -332,9 +405,12 @@ Widget forgotbutton()
 class student_State extends State<Registration_student> {
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-        body: AnnotatedRegion <SystemUiOverlayStyle>(
-            value: SystemUiOverlayStyle.light,
+    final _screenSize = MediaQuery.of(context).size;
+    // TODO: implement build
+    return  Scaffold(
+      body:SingleChildScrollView(
+          child: Container(
+          height: _screenSize.height * 2.0,
             child: GestureDetector(
               child: Stack(
                 children:<Widget> [
@@ -411,7 +487,8 @@ class student_State extends State<Registration_student> {
 
 
 
-    );
+    ));
+
 
 
 
