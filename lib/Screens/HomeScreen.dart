@@ -25,8 +25,6 @@ class _HomeScreenState extends State<HomeScreen>{
            children: [
              Image.asset("assets/images/logo.jpeg",
                height: 30,alignment: Alignment.center,),
-
-
            ],
          ),
 
@@ -113,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen>{
 
           SafeArea(child:Padding(
 
-            padding:EdgeInsets.all(40.0),
+            padding:EdgeInsets.all(20.0),
             child: Column(
 
               children:<Widget> [
