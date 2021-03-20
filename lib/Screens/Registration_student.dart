@@ -10,6 +10,8 @@ class Registration_student extends StatefulWidget{
 
 class student_State extends State<Registration_student> {
   String valueChoose;
+  String valueChoosen;
+
   List listitem = [''
       'Department of Electronic Science',
     'Department of Instrumentation Science',
@@ -320,64 +322,7 @@ class student_State extends State<Registration_student> {
   }
 
   Widget buildDepartment() {
- /*   String valueChoose;
-    List listitem = [''
-        'Department of Electronic Science',
-      'Department of Instrumentation Science',
-      'Department Of Mathematics',
-      'Department of Environmental Sciences',
-      'Department of Zoology',
-      'Department of Biotechnology',
-      'Department of Geography',
-      'Department of Geology',
-      'Department of Physics',
-      'Department of Chemistry',
-      'Department of Botany',
-      'Department of Atmospheric and Space Sciences',
-      'Department of Statistics',
-      'Department of Computer Science',
-      'Department of Media and Communication Studies',
-      'Department of Microbiology',
-      'Interdisciplinary School of Health Sciences',
-      'School of Energy Studies',
-      'Interdisciplinary School of Scientific Computing',
-      'Institute of Bioinformatics Biotechnology IBB',
-      'Bioinformatics Centre',
-      'Centre for Information and Network Security CINS',
-      'Centre for Modeling and Simulation',
-      'School of Basic Medical Sciences',
-      'Department of Technology',
-      'Department of Commerce & Research Centre',
-      'Department of Management Science',
-      'Department Of Marathi',
-      'Department of Hindi',
-      'Department of English',
-      'Department of Sanskrit and Prakrit Languages',
-      'Department of Pali',
-      'Department of Dr. Babasaheb Ambedkar Studies',
-      'Centre for Advanced Studies in Sanskrit',
-      'Department of Economics',
-      'Department of History',
-      'Department of Philosophy',
-      'Department of Anthropology',
-      'Department of Psychology',
-      'Department of Politics and Public Administration',
-      'Department of Sociology',
-      'Department of Defence & Strategic Studies',
-      'Interdisciplinary School (Humanities and Social Science)',
-      'Krantijyoti Savitribai Phule Womens Studies Centre',
-      'Department of Lifelong Learning & Extension',
-      'Department of Law',
-      'Centre for Social Sciences and Humanities (CSSH)',
-      'Department of Education & Extension',
-      'Department of Physical Education',
-      'Centre for Performing Arts',
-      'Jayakar Library of Library & Information Science',
-      'Department of Library & Information Science',
-      'Department of Communication and Journalism',
-      'Skill Development Centre'];
 
-  */
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
