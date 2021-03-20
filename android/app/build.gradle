@@ -1,6 +1,5 @@
 import web.GradleException
 
-
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
