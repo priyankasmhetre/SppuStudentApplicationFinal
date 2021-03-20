@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
+
 class Registration_student extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {

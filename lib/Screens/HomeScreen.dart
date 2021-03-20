@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen>{
 
             ListTile(
               title: Text("Home"),
-              leading: Image.asset("assets/images/logo1.png",
+              leading: Image.asset("assets/images/logo.jpeg",
               height: 30,),
 
             ),

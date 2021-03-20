@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "362979189080",
+    "project_id": "sppustudentapplication",
+    "storage_bucket": "sppustudentapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362979189080:android:be4a11e5e56c50c8e5852d",
+        "android_client_info": {
+          "package_name": "com.example.sppu_student_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362979189080-trahnc1mlqmn74vs3rnjcd032tmce4be.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZVzVHSBG1_HFaA6WowwmaB31TflW_tmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362979189080-trahnc1mlqmn74vs3rnjcd032tmce4be.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
