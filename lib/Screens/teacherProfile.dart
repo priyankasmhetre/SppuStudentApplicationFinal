@@ -446,6 +446,7 @@ class student_State extends State<teacherProfile> {
             borderRadius: BorderRadius.circular(15)
         ),
         color: Colors.white,
+
         child: Text(
           "Save",
           style: TextStyle(
