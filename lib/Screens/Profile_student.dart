@@ -1,14 +1,14 @@
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
 
-class updateProfile extends StatefulWidget{
+class Profile_student extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     return student_State();
   }
 }
 
-class student_State extends State<updateProfile> {
+class student_State extends State<Profile_student> {
   String valueChoose;
   String valueChoosen;
 
@@ -22,26 +22,26 @@ class student_State extends State<updateProfile> {
         .size;
     // TODO: implement build
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white,
-
-            ),
-          ),
-          title: Row(mainAxisAlignment: MainAxisAlignment.center,
-
-            children: [
-              Image.asset("assets/images/logo.jpeg",
-                height: 30,alignment: Alignment.center,),
-            ],
-
-          ),
-
-          backgroundColor:   Color(0xcc5ac18e),
-
-
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white,
 
         ),
+        ),
+        title: Row(mainAxisAlignment: MainAxisAlignment.center,
+
+          children: [
+            Image.asset("assets/images/logo.jpeg",
+              height: 30,alignment: Alignment.center,),
+          ],
+
+        ),
+
+        backgroundColor:   Color(0xcc5ac18e),
+
+
+
+      ),
 
         body: SingleChildScrollView(
 
@@ -116,8 +116,14 @@ class student_State extends State<updateProfile> {
                                 height: 10,
                               ),
                               buildName(),
-
-
+                              SizedBox(
+                                height: 10,
+                              ),
+                              build_Roll_No(),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              build_Course(),
                               SizedBox(
                                 height: 10,
                               ),
@@ -126,7 +132,10 @@ class student_State extends State<updateProfile> {
                                   height: 10
                               ),
                               build_Sem(),
-
+                              SizedBox(
+                                  height: 10
+                              ),
+                              buildId(),
 
                               SizedBox(
                                 height: 10,
@@ -136,7 +145,10 @@ class student_State extends State<updateProfile> {
                                 height: 10,
                               ),
                               build_MobNo(),
-
+                              SizedBox(
+                                height: 10,
+                              ),
+                              build_blood_group(),
                               SizedBox(
                                 height: 10,
                               ),
@@ -575,40 +587,40 @@ class student_State extends State<updateProfile> {
           ),
           height: 60,
           child: DropdownButton(
-            hint: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("Select the sem",
+           hint: Padding(
+             padding: const EdgeInsets.all(8.0),
+             child: Text("Select the sem",
                 style: TextStyle(
-                  color: Colors.black87,
-                ),),
-            ),
+                 color: Colors.black87,
+                    ),),
+           ),
 
-            icon: Icon(Icons.arrow_drop_down),
-            isExpanded: true,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 17,
-            ),
-            value: valueChoose,
-            onChanged: (newValue) {
-              setState(() {
-                valueChoose = newValue;
-              });
-            },
-            items: listitem.map((valueitem) {
-              return DropdownMenuItem(
-                value: valueitem,
-                child: Text(valueitem),
-              );
-            }).toList(),
-          ),
+                 icon: Icon(Icons.arrow_drop_down),
+               isExpanded: true,
+                   style: TextStyle(
+                color: Colors.black,
+                     fontSize: 17,
+                     ),
+                  value: valueChoose,
+                       onChanged: (newValue) {
+                             setState(() {
+                         valueChoose = newValue;
+                        });
+                         },
+                        items: listitem.map((valueitem) {
+                     return DropdownMenuItem(
+                     value: valueitem,
+                      child: Text(valueitem),
+                       );
+                            }).toList(),
+                        ),
 
-        ),
+                    ),
 
-      ],
+                ],
 
-    );
-  }
+                   );
+                }
 
   Widget build_Sem() {
     return Column(
@@ -642,36 +654,36 @@ class student_State extends State<updateProfile> {
           ),
           height: 60,
           child: DropdownButton(
-            hint: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("Select the Year",
-                style: TextStyle(
-                  color: Colors.black87,
-                ),),
-            ),
+                   hint: Padding(
+                     padding: const EdgeInsets.all(8.0),
+                     child: Text("Select the Year",
+                      style: TextStyle(
+                          color: Colors.black87,
+                       ),),
+                   ),
 
-            icon: Icon(Icons.arrow_drop_down),
-            isExpanded: true,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 17,
-            ),
-            value: valueChoosen,
-            onChanged: (newValue) {
-              setState(() {
-                valueChoosen= newValue;
-              });
-            },
-            items: listitems.map((valueitem) {
-              return DropdownMenuItem(
-                value: valueitem,
-                child: Text(valueitem),
-              );
-            }).toList(),
-          ),
+                      icon: Icon(Icons.arrow_drop_down),
+                            isExpanded: true,
+                        style: TextStyle(
+                          color: Colors.black,
+                           fontSize: 17,
+                         ),
+                    value: valueChoosen,
+                     onChanged: (newValue) {
+                       setState(() {
+                  valueChoosen= newValue;
+                   });
+                },
+                   items: listitems.map((valueitem) {
+                    return DropdownMenuItem(
+                   value: valueitem,
+                  child: Text(valueitem),
+                     );
+               }).toList(),
+             ),
 
-        ),
-      ],
+              ),
+    ],
     );
 
   }
@@ -738,14 +750,14 @@ class student_State extends State<updateProfile> {
       // ignore: deprecated_member_use
       child: RaisedButton(
         elevation: 5,
-        onPressed: () => print("Update"),
+        onPressed: () => print("Save"),
         padding: EdgeInsets.all(15),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
         ),
         color: Colors.white,
         child: Text(
-          "Update",
+          "Save",
           style: TextStyle(
             color: Color(0xff5ac18e),
             fontSize: 18,
