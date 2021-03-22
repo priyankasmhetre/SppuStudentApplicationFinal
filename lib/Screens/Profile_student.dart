@@ -210,7 +210,6 @@ class student_State extends State<Profile_student> {
             //   keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
-
             ),
             decoration: InputDecoration(
               border: InputBorder.none,

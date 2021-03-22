@@ -444,7 +444,6 @@ class student_State extends State<update_teacher_profile> {
 
             fontSize: 18,
             fontWeight: FontWeight.bold,
-
           ),
 
         ),
