@@ -439,6 +439,7 @@ class student_State extends State<update_teacher_profile> {
         child: Text(
           "Update",
           style: TextStyle(
+
             color: Color(0xff5ac18e),
 
             fontSize: 18,

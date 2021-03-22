@@ -21,8 +21,9 @@ class myapp extends StatelessWidget{
    // home:Profile_student(),
   //home: updateProfile(),
   //home:teacherProfile(),
+
   home: update_teacher_profile(),
-   
+
    //home:HomeScreen(),
   //home: Registration_student(),
    //home: login_student(),

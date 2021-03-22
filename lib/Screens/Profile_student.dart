@@ -217,6 +217,7 @@ class student_State extends State<Profile_student> {
               contentPadding: EdgeInsets.only(left: 12,),
               hintText: "Name",
               hintStyle: TextStyle(
+
                 color: Colors.black,
 
               ),
