@@ -750,6 +750,7 @@ class student_State extends State<updateProfile> {
             color: Color(0xff5ac18e),
             fontSize: 18,
             fontWeight: FontWeight.bold,
+
           ),
 
         ),
