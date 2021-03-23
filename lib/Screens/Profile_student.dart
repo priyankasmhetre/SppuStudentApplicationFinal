@@ -50,6 +50,7 @@ class student_State extends State<Profile_student> {
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
                               colors: [
+
                                 Color(0x665ac18e),
                                 Color(0x995ac18e),
                                 Color(0xcc5ac18e),
