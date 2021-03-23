@@ -18,16 +18,16 @@ class myapp extends StatelessWidget{
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
    // home:Createprofile(),
-   // home:Profile_student(),
+   home:Profile_student(),
   //home: updateProfile(),
   //home:teacherProfile(),
 
-    home: update_teacher_profile(),
+    //ome: update_teacher_profile(),
 
    //home:HomeScreen(),
   //home: Registration_student(),
    //home: login_student(),
-   //home: TeacherHomeScreen(),
+  // home: TeacherHomeScreen(),
   );
 
 
