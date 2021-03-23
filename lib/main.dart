@@ -17,23 +17,15 @@ class myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
-   // home:Createprofile(),
-   home:Profile_student(),
+   //home:Createprofile(),
+    home:Profile_student(),
   //home: updateProfile(),
   //home:teacherProfile(),
-
-    //ome: update_teacher_profile(),
-
+    // home: update_teacher_profile(),
    //home:HomeScreen(),
   //home: Registration_student(),
-   //home: login_student(),
-  // home: TeacherHomeScreen(),
+    // home: login_student(),
+   //home: TeacherHomeScreen(),
   );
-
-
-
-
-
-
 }
 

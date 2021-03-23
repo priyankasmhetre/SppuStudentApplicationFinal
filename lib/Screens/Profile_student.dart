@@ -1,59 +1,42 @@
-
-
-
-
-
 import 'dart:io';
-
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-class Profile_student extends StatefulWidget{
+
+class Profile_student extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return student_State();
   }
 }
-
 class student_State extends State<Profile_student> {
-  PickedFile imageFile;
-  final ImagePicker _picker=ImagePicker();
-  String valueChoose;
-  String valueChoosen;
+   PickedFile imageFile;
+   ImagePicker _picker = ImagePicker();
+   String valueChoose;
+   String valueChoosen;
 
-  List listitem = ['1','2','3','4','5','6'];
-  List listitems =  ['1','2','3'];
+  List listitem = ['1','2','3'];
+  List listitems =  ['1','2','3','4','5','6'];
 
   @override
-  Widget build(BuildContext context) {
-    final _screenSize = MediaQuery
-        .of(context)
-        .size;
+    Widget build(BuildContext context) {
+    final _screenSize = MediaQuery.of(context).size;
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white,
-
-        ),
+        ), onPressed: () {  },
         ),
         title: Row(mainAxisAlignment: MainAxisAlignment.center,
-
           children: [
-            Image.asset("assets/images/logo.jpeg",
+            Image.asset("assets.images/logo.jpeg",
               height: 30,alignment: Alignment.center,),
           ],
-
         ),
-
-        backgroundColor:   Color(0xcc5ac18e),
-
-
-
+        backgroundColor :  Color(0xcc5ac18e),
       ),
-
         body: SingleChildScrollView(
-
             child: Container(
                 height: _screenSize.height * 2.0,
                 child: GestureDetector(
@@ -75,7 +58,6 @@ class student_State extends State<Profile_student> {
                           ),
                         ),
 
-
                         child: SingleChildScrollView(
                           // physics: AlwaysScrollableScrollPhysics(),
                           padding: EdgeInsets.symmetric(
@@ -83,7 +65,6 @@ class student_State extends State<Profile_student> {
                             vertical: 120,
                           ),
                           child: Column(
-
                             children: <Widget>[
                               Padding(
                                 padding: const EdgeInsets.all(22.0),
@@ -93,7 +74,6 @@ class student_State extends State<Profile_student> {
                                     color: Colors.white,
                                     fontSize: 30,
                                     fontWeight: FontWeight.bold,
-
                                   ),
                                 ),
                               ),
@@ -104,10 +84,8 @@ class student_State extends State<Profile_student> {
                                     CircleAvatar(
                                       radius: 50,
                                     backgroundImage: imageFile==null
-                                        ?AssetImage("assets/images/logo.jpeg")
+                                        ?AssetImage("assets.images/logo.jpeg")
                                         :FileImage(File(imageFile.path)),
-
-
                                     ),
                                     Positioned(bottom: 1,right: 1,
                                         child:Container(
@@ -121,14 +99,11 @@ class student_State extends State<Profile_student> {
                                            },
                                            child: Icon(Icons.add_a_photo,color: Colors.white,),
                                          ),
-
                                           decoration: BoxDecoration(
                                             color: Colors.redAccent,
                                             borderRadius: BorderRadius.circular(20),
                                           ),
-
                                         ))
-
                                   ],
                                 ),
                               ),
@@ -156,7 +131,6 @@ class student_State extends State<Profile_student> {
                                   height: 10
                               ),
                               buildId(),
-
                               SizedBox(
                                 height: 10,
                               ),
@@ -177,19 +151,14 @@ class student_State extends State<Profile_student> {
                                 height: 10,
                               ),
                               Loginbutton(),
-
-
                             ],
                           ),
-
                         ),
                       ),
                     ],
                   ),
                 )
             )
-
-
         ));
   }
   Widget bottomsheet() {
@@ -213,52 +182,36 @@ class student_State extends State<Profile_student> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
            children:<Widget> [
+             // ignore: deprecated_member_use
              FlatButton.icon( icon:Icon(Icons.camera_alt),onPressed:(){
                takePhoto(ImageSource.camera);
-             }, label:Text("Camera")
+             },
+                 label:Text("Camera")
              ),
+             // ignore: deprecated_member_use
              FlatButton.icon( icon:Icon(Icons.image),onPressed:(){
                takePhoto(ImageSource.gallery);
              },
                  label:Text("Gallary")
              )
-
            ]
           )
         ],
       ),
-
     );
   }
-  void takePhoto (ImageSource sourse) async {
+  void takePhoto (ImageSource source) async {
     final pickedFile=await _picker.getImage(
-      source: sourse,
+      source : source,
     );
     setState(() {
       imageFile=pickedFile;
-
     });
   }
-
-
-
   Widget buildName() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        /* Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "Name",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-
-          ),
-        ),
-      ),
-        */
         SizedBox(height: 10,),
         Container(
           alignment: Alignment.centerLeft,
@@ -303,19 +256,6 @@ class student_State extends State<Profile_student> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        /* Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "Name",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
-
-          ),
-        ),
-      ),
-        */
         SizedBox(height: 10,),
         Container(
           alignment: Alignment.centerLeft,
@@ -358,19 +298,7 @@ class student_State extends State<Profile_student> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        /* Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "Name",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
 
-          ),
-        ),
-      ),
-        */
         SizedBox(height: 10,),
         Container(
           alignment: Alignment.centerLeft,
@@ -408,23 +336,11 @@ class student_State extends State<Profile_student> {
 
     );
   }
-
   Widget buildId() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        /* Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "University Id Of Student",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight:FontWeight.bold,
 
-          ),
-        ),
-      ),*/
         SizedBox(height: 10,),
         Container(
           alignment: Alignment.centerLeft,
@@ -462,29 +378,17 @@ class student_State extends State<Profile_student> {
 
     );
   }
-
   Widget buildEmail() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        /* Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "University Mail Adress",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight:FontWeight.bold,
-          ),
-        ),
-      ),*/
         SizedBox(height: 10,),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
+               color: Colors.white,
+               borderRadius: BorderRadius.circular(10),
+               boxShadow: [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 4,
@@ -492,13 +396,13 @@ class student_State extends State<Profile_student> {
                 )
               ]
           ),
-          height: 60,
+              height: 60,
           child: TextField(
-            keyboardType: TextInputType.emailAddress,
-            style: TextStyle(
+              keyboardType: TextInputType.emailAddress,
+              style: TextStyle(
               color: Colors.black87,
             ),
-            decoration: InputDecoration(
+              decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(left: 12,),
               hintText: "Mail Address Register To University",
@@ -508,11 +412,8 @@ class student_State extends State<Profile_student> {
               ),
             ),
           ),
-
         ),
-
       ],
-
     );
   }
 
@@ -520,18 +421,6 @@ class student_State extends State<Profile_student> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        /*Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "University Mail Adress",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight:FontWeight.bold,
-
-          ),
-        ),
-      ),*/
         SizedBox(height: 10,),
         Container(
           alignment: Alignment.centerLeft,
@@ -558,35 +447,19 @@ class student_State extends State<Profile_student> {
               hintText: "Blood Group",
               hintStyle: TextStyle(
                 color: Colors.black,
-
               ),
             ),
           ),
-
         ),
-
       ],
-
     );
   }
-
 
   Widget build_MobNo() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        /*Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "University Mail Adress",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight:FontWeight.bold,
 
-          ),
-        ),
-      ),*/
         SizedBox(height: 10,),
         Container(
           alignment: Alignment.centerLeft,
@@ -629,18 +502,7 @@ class student_State extends State<Profile_student> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        /*Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "University Mail Adress",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight:FontWeight.bold,
 
-          ),
-        ),
-      ),*/
         SizedBox(height: 10,),
         Container(
           alignment: Alignment.centerLeft,
@@ -659,7 +521,7 @@ class student_State extends State<Profile_student> {
           child: DropdownButton(
            hint: Padding(
              padding: const EdgeInsets.all(8.0),
-             child: Text("Select the sem",
+             child: Text("Select the Year",
                 style: TextStyle(
                  color: Colors.black87,
                     ),),
@@ -696,18 +558,7 @@ class student_State extends State<Profile_student> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        /*Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "University Mail Adress",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight:FontWeight.bold,
 
-          ),
-        ),
-      ),*/
         SizedBox(height: 10,),
         Container(
           alignment: Alignment.centerLeft,
@@ -726,7 +577,7 @@ class student_State extends State<Profile_student> {
           child: DropdownButton(
                    hint: Padding(
                      padding: const EdgeInsets.all(8.0),
-                     child: Text("Select the Year",
+                     child: Text("Select the Semester",
                       style: TextStyle(
                           color: Colors.black87,
                        ),),
@@ -755,25 +606,12 @@ class student_State extends State<Profile_student> {
               ),
     ],
     );
-
   }
 
   Widget build_Adress() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        /*Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "University Mail Adress",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight:FontWeight.bold,
-
-          ),
-        ),
-      ),*/
         SizedBox(height: 10,),
         Container(
           alignment: Alignment.centerLeft,
@@ -797,26 +635,20 @@ class student_State extends State<Profile_student> {
             decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(left: 12,),
-              hintText: "Adress",
+              hintText: "Address",
               hintStyle: TextStyle(
                 color: Colors.black,
-
               ),
             ),
           ),
-
         ),
-
       ],
-
     );
   }
-
   Widget Loginbutton() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25),
       width: double.infinity,
-
       // ignore: deprecated_member_use
       child: RaisedButton(
         elevation: 5,
@@ -832,112 +664,9 @@ class student_State extends State<Profile_student> {
             color: Color(0xff5ac18e),
             fontSize: 18,
             fontWeight: FontWeight.bold,
-
           ),
-
         ),
       ),
-
     );
   }
 }
-
-/*
-class student_State extends State<Registration_student> {
-  @override
-  Widget build(BuildContext context){
-    final _screenSize = MediaQuery.of(context).size;
-    // TODO: implement build
-    return  Scaffold(
-      body:SingleChildScrollView(
-          child: Container(
-          height: _screenSize.height * 2.0,
-            child: GestureDetector(
-              child: Stack(
-                children:<Widget> [
-                  Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin:Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0x665ac18e),
-                            Color(0x995ac18e),
-                            Color(0xcc5ac18e),
-                            Color(0xff5ac18e),
-                          ]
-                      ),
-                    ),
-
-
-                   child: SingleChildScrollView(
-                     // physics: AlwaysScrollableScrollPhysics(),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 25,
-                        vertical: 120,
-                      ),
-                      child: Column(
-
-                        children:<Widget> [
-                          Padding(
-                            padding: const EdgeInsets.all(22.0),
-                            child: Text(
-                              "Registration Page",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight:FontWeight.bold,
-
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildName(),
-                          SizedBox(
-                            height: 10
-                          ),
-                          buildId(),
-
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildEmail(),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildDepartment(),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildCourse(),
-                          Loginbutton(),
-                          forgotbutton(),
-
-
-                        ],
-                      ),
-
-                    ),
-                 ),
-                ],
-              ),
-            )
-        )
-
-
-
-    ));
-
-
-
-
-
-
-
-  }
-}
-}*/
