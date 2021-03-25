@@ -28,9 +28,9 @@ class myapp extends StatelessWidget{
    //home:HomeScreen(),
   //home: Registration_student(),
     // home: login_student(),
-   home:GeneratePage(),
-   // home:QrHomePage(),
-   // home: ScanPage(),
+   //home:GeneratePage(),
+   home:QrHomePage(),
+    //home: ScanPage(),
     // home: TeacherHomeScreen(),
   );
 }
