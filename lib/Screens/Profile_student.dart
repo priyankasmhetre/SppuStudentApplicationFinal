@@ -1,4 +1,6 @@
+
 import 'dart:io';
+
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
@@ -30,7 +32,7 @@ class student_State extends State<Profile_student> {
         ),
         title: Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets.images/logo.jpeg",
+            Image.asset("assets/Images/logo.jpeg",
               height: 30,alignment: Alignment.center,),
           ],
         ),
@@ -84,9 +86,10 @@ class student_State extends State<Profile_student> {
                                   children:<Widget> [
                                     CircleAvatar(
                                       radius: 50,
-                                    backgroundImage: imageFile==null
+                                 /*   backgroundImage: imageFile==null
                                         ?AssetImage("assets.images/logo.jpeg")
-                                        :FileImage(File(imageFile.path)),
+                                        :FileImage(File(imageFile.path)),*/
+
                                     ),
                                     Positioned(bottom: 1,right: 1,
                                         child:Container(

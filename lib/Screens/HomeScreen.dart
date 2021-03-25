@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen>{
          title: Row(mainAxisAlignment: MainAxisAlignment.center,
 
            children: [
-             Image.asset("assets/images/logo.jpeg",
+             Image.asset("assets/Images/logo.jpeg",
                height: 30,alignment: Alignment.center,),
            ],
          ),
@@ -50,14 +50,14 @@ class _HomeScreenState extends State<HomeScreen>{
               decoration: BoxDecoration(
                   color: Colors.blue,
                   image: DecorationImage(
-                      image: AssetImage("assets/images/uni_image.jpeg"),
+                      image: AssetImage("assets/Images/uni_image.jpeg"),
                       fit: BoxFit.cover)
               ),
             ),
 
             ListTile(
               title: Text("Home"),
-              leading: Image.asset("assets/images/logo.jpeg",
+              leading: Image.asset("assets/Images/logo.jpeg",
               height: 30,),
 
             ),
@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen>{
             ),
             ListTile(
               title: Text('Attendance'),
-              leading: Image.asset("assets/images/attendence.png",
+              leading: Image.asset("assets/Images/attendence.png",
 
                 height: 30,
               ),
@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen>{
                           child: Column(
 
                             children:<Widget> [
-                              Image.asset("assets/images/logo1.png",
+                              Image.asset("assets/Images/logo.jpeg",
                                 ),
 
                               Text("Home"),
@@ -210,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen>{
                           ),
                           child: Column(
                             children:<Widget> [
-                              Image.asset("assets/images/attendence.png",
+                              Image.asset("assets/Images/attendence.png",
                               ),
                               Text("Attendence"),
                             ],

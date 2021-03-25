@@ -1,6 +1,15 @@
+
+
+
+
+//import 'dart:js';
+
+import 'dart:js';
+
 import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
+import 'package:sppu_student_application/Screens/PasswordReset_student.dart';
 class login_student extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -119,7 +128,7 @@ Widget forgotbutton()
   return Container(
     alignment: Alignment.centerRight,
     child: FlatButton(
-      onPressed: ()=>print("forgot password pressed"),
+
       padding: EdgeInsets.only(right: 0),
 
       child: Text(

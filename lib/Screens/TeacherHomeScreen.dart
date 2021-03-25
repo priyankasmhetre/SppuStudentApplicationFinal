@@ -26,7 +26,7 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
       appBar:AppBar(
         title: Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/images/logo.jpeg",
+            Image.asset("assets/Images/logo.jpeg",
               height: 30,alignment: Alignment.center,),
           ],
         ),

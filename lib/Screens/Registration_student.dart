@@ -1,5 +1,6 @@
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
+import 'package:sppu_student_application/Screens/login_student.dart';
 
 class Registration_student extends StatefulWidget{
   @override
@@ -474,7 +475,16 @@ class student_State extends State<Registration_student> {
     return Container(
       alignment: Alignment.centerRight,
       child: FlatButton(
-        onPressed: () => print("forgot password pressed"),
+        onPressed: () =>
+      {
+          Navigator.of(context)
+          .push(
+          MaterialPageRoute(
+            builder: (context) => login_student(),)
+      ),
+    },
+
+        
         padding: EdgeInsets.only(right: 0),
 
         child: Text(
