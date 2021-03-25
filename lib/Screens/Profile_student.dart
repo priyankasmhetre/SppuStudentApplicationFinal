@@ -14,6 +14,7 @@ class Profile_student extends StatefulWidget {
 class student_State extends State<Profile_student> {
    PickedFile imageFile;
    ImagePicker _picker = ImagePicker();
+
    String valueChoose;
    String valueChoosen;
 

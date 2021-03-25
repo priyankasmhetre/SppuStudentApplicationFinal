@@ -17,6 +17,22 @@ class _PasswordReset extends State<PasswordReset> {
         .size;
     // TODO: implement build
     return Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.white,
+            ), onPressed: () {  },
+          ),
+          title: Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                child: Image.asset("assets/Images/logo.jpeg",
+                  height: 30,alignment: Alignment.center,),
+              ),
+            ],
+          ),
+          backgroundColor :  Color(0xcc5ac18e),
+        ),
         body: SingleChildScrollView(
             child: Container(
                 height: _screenSize.height * 2.0,

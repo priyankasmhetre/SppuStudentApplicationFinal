@@ -63,7 +63,6 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
             ListTile(
               title: Text("Profile"),
               leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:30,),
-
             ),
             ListTile(
               title: Text("Add"),
