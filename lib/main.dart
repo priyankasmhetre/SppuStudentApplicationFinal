@@ -38,7 +38,7 @@ class myapp extends StatelessWidget{
    // home:QrHomePage(),
    // home: ScanPage(),
      //home: TeacherHomeScreen(),
-    home: teacher_Registration(),
+    //home: teacher_Registration(),
    // home: login_teacher(),
   );
 }
