@@ -4,6 +4,8 @@ import 'package:sppu_student_application/Screens/PasswordReset_student.dart';
 import 'package:sppu_student_application/Screens/Profile_student.dart';
 import 'package:sppu_student_application/Screens/Qrcode.dart';
 import 'package:sppu_student_application/Screens/Verify_student.dart';
+import 'package:sppu_student_application/Screens/teacher_Registration.dart';
+import 'package:sppu_student_application/Screens/teacher_login.dart';
 import './Screens/Qrhomepage.dart';
 import './Screens/scan.dart';
 
@@ -27,15 +29,17 @@ class myapp extends StatelessWidget{
   //home: updateProfile(),
   //home:teacherProfile(),
     // home: update_teacher_profile(),
-   home:HomeScreen(),
+   //home:HomeScreen(),
   //home: Registration_student(),
-    //home: login_student(),
+   // home: login_student(),
    //home:GeneratePage(),
    // home: PasswordReset(),
     //home: Verify_student(),
    // home:QrHomePage(),
    // home: ScanPage(),
      //home: TeacherHomeScreen(),
+    home: teacher_Registration(),
+   // home: login_teacher(),
   );
 }
 

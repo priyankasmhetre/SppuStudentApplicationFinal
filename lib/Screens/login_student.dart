@@ -2,7 +2,12 @@
 
 
 
-//import 'dart:js';
+
+
+
+
+
+
 
 import 'dart:js';
 
@@ -10,6 +15,7 @@ import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:sppu_student_application/Screens/PasswordReset_student.dart';
+import 'package:sppu_student_application/Screens/Registration_student.dart';
 class login_student extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -127,7 +133,13 @@ Widget forgotbutton()
 {
   return Container(
     alignment: Alignment.centerRight,
-    child: FlatButton(
+    child: RaisedButton(
+
+
+
+
+
+
 
       padding: EdgeInsets.only(right: 0),
 
@@ -182,7 +194,14 @@ class student_State extends State<login_student> {
            appBar: AppBar(
              leading: IconButton(
                icon: Icon(Icons.arrow_back, color: Colors.white,
-               ), onPressed: () {  },
+               ), onPressed: () {
+               Navigator.of(context)
+                   .push(
+                   MaterialPageRoute(
+                     builder: (context) => Registration_student(),)
+               );
+
+              },
              ),
              title: Row(mainAxisAlignment: MainAxisAlignment.center,
                children: [

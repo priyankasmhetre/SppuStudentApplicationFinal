@@ -4,6 +4,7 @@ import 'dart:io';
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:sppu_student_application/Screens/HomeScreen.dart';
 
 class Profile_student extends StatefulWidget {
   @override
@@ -29,7 +30,13 @@ class student_State extends State<Profile_student> {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white,
-        ), onPressed: () {  },
+        ), onPressed: () {
+          Navigator.of(context)
+              .push(
+              MaterialPageRoute(
+                builder: (context) => HomeScreen(),)
+          );
+        },
         ),
         title: Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -87,9 +94,9 @@ class student_State extends State<Profile_student> {
                                   children:<Widget> [
                                     CircleAvatar(
                                       radius: 50,
-                                 /*   backgroundImage: imageFile==null
+                                   backgroundImage: imageFile==null
                                         ?AssetImage("assets.images/logo.jpeg")
-                                        :FileImage(File(imageFile.path)),*/
+                                        :FileImage(File(imageFile.path)),
 
                                     ),
                                     Positioned(bottom: 1,right: 1,

@@ -49,14 +49,14 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
               decoration: BoxDecoration(
                   color: Colors.blue,
                   image: DecorationImage(
-                      image: AssetImage("assets/images/uni_image.jpeg"),
+                      image: AssetImage("assets/Images/uni_image.jpeg"),
                       fit: BoxFit.cover)
               ),
             ),
 
             ListTile(
               title: Text("Home"),
-              leading: Image.asset("assets/images/logo1.png",
+              leading: Image.asset("assets/Images/logo.jpeg",
                 height: 30,),
 
             ),
@@ -66,7 +66,7 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
             ),
             ListTile(
               title: Text("Add"),
-              leading: Image.asset("assets/images/Add2.png",
+              leading: Image.asset("assets/Images/Add2.png",
                 height: 30,),
                //leading:  SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904437.svg",height:30,),
 
@@ -74,7 +74,7 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
 
             ListTile(
               title: Text(' Display Attendance'),
-              leading: Image.asset("assets/images/attendence.png",
+              leading: Image.asset("assets/Images/attendence.png",
 
                 height: 30,
               ),
@@ -116,7 +116,7 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
                             ),
                             child: Column(
                               children:<Widget> [
-                                Image.asset("assets/images/logo.jpeg",
+                                Image.asset("assets/Images/logo.jpeg",
                                 ),
 
                                 Text("Home"),
@@ -155,8 +155,8 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
                             ),
                             child: Column(
                               children:<Widget> [
-                              /*  Image.asset("assets/images/Add2.png",
-                                ),*/
+                                Image.asset("assets/Images/Add2.png",
+                                ),
 
                                 Text(" Add "),
                               ],
@@ -170,7 +170,7 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
                             ),
                             child: Column(
                               children:<Widget> [
-                                Image.asset("assets/images/attendence.png",
+                                Image.asset("assets/Images/attendence.png",
                                 ),
                                 Text(" Display Attendence"),
                               ],
