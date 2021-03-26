@@ -32,8 +32,7 @@ class myapp extends StatelessWidget{
   //home: Registration_student(),
      home: login_student(),
 
-
-   //home:GeneratePage(),
+    //home:GeneratePage(),
     // home:QrHomePage(),
    // home: ScanPage(),
 
