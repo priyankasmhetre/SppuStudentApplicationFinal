@@ -8,6 +8,7 @@ import 'package:sppu_student_application/Screens/teacher_Registration.dart';
 import 'package:sppu_student_application/Screens/teacher_login.dart';
 import './Screens/Qrhomepage.dart';
 import './Screens/scan.dart';
+import './Screens/Admin_login.dart';
 
 import 'package:sppu_student_application/Screens/TeacherHomeScreen.dart';
 import 'package:sppu_student_application/Screens/login_student.dart';
@@ -40,6 +41,7 @@ class myapp extends StatelessWidget{
      //home: TeacherHomeScreen(),
     //home: teacher_Registration(),
    // home: login_teacher(),
+    home: LoginPage(),
   );
 }
 
