@@ -24,23 +24,22 @@ class myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
-    // home: PasswordReset(),
-    //home: Verify_student(),
+
    // home:Profile_student(),
   //home: updateProfile(),
-    //home:HomeScreen(),
+  //home:teacherProfile(),
+    // home: update_teacher_profile(),
+   //home:HomeScreen(),
   //home: Registration_student(),
-     home: login_student(),
-
-    //home:GeneratePage(),
-    // home:QrHomePage(),
+   // home: login_student(),
+   //home:GeneratePage(),
+   // home: PasswordReset(),
+    //home: Verify_student(),
+   // home:QrHomePage(),
    // home: ScanPage(),
-
      //home: TeacherHomeScreen(),
     //home: teacher_Registration(),
    // home: login_teacher(),
-    //home:teacherProfile(),
-    // home: update_teacher_profile(),
   );
 }
 
