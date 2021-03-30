@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:sppu_student_application/Screens/Admin_login.dart';
+import 'package:sppu_student_application/Screens/login_student.dart';
+import 'package:sppu_student_application/Screens/teacher_login.dart';
 class select_role extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -47,7 +51,7 @@ class _Selectrole extends State<select_role > {
               SizedBox(
                 height: 20,
               ),
-              buildAdmin(),
+              buildadmin(),
               SizedBox(
                 height: 20,
               ),
@@ -73,174 +77,171 @@ class _Selectrole extends State<select_role > {
     );
   }
 }
-Widget buildAdmin() {
+
+Widget buildadmin() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
 
       SizedBox(height: 10,),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Color(0x665ac18e),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 4,
-                offset: Offset(0, 2),
-              )
-            ]
-        ),
-        height: 60,
-        child: TextField(
-          //   keyboardType: TextInputType.emailAddress,
-          style: TextStyle(
-            color: Colors.black87,
-          ),
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.only(left: 12,),
-            hintText: "Admin",
-            hintStyle: TextStyle(
-              color: Colors.black,
 
-            ),
-          ),
-        ),
+       Padding(
+       padding: EdgeInsets.all(10.0),
+       // ignore: deprecated_member_use
+       child: FlatButton(
+       onPressed: ()
+  {
+  BuildContext context;
+  Navigator.push(context, MaterialPageRoute(
+  builder: (context) => LoginPage(),
+  ),
+  );
+  },
+         padding: EdgeInsets.symmetric(
+           horizontal: 25.0,
+           vertical: 10.0,
+       ),
+       color:Colors.greenAccent ,
+      textColor: Colors.black,
+       child: Text(
+     "Admin",
+      style: TextStyle(
+     fontSize: 20.0,
+  ),
+  ),
 
-      ),
+         )
+
+       )
 
     ],
 
   );
 }
+
 Widget buildstudent() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
 
       SizedBox(height: 10,),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Color(0x665ac18e),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 4,
-                offset: Offset(0, 2),
-              )
-            ]
-        ),
-        height: 60,
-        child: TextField(
-          //   keyboardType: TextInputType.emailAddress,
-          style: TextStyle(
-            color: Colors.black87,
-          ),
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.only(left: 12,),
-            hintText: "Student",
-            hintStyle: TextStyle(
-              color: Colors.black,
 
+      Padding(
+          padding: EdgeInsets.all(10.0),
+          // ignore: deprecated_member_use
+          child: FlatButton(
+            onPressed: ()
+            {
+              BuildContext context;
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) => login_student(),
+              ),
+              );
+            },
+            padding: EdgeInsets.symmetric(
+              horizontal: 25.0,
+              vertical: 10.0,
             ),
-          ),
-        ),
+            color:Colors.greenAccent ,
+            textColor: Colors.black,
+            child: Text(
+              "Student",
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
+            ),
 
-      ),
+          )
+
+      )
 
     ],
 
   );
 }
+
 Widget buildteacher() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
 
       SizedBox(height: 10,),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Color(0x665ac18e),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 4,
-                offset: Offset(0, 2),
-              )
-            ]
-        ),
-        height: 60,
-        child: TextField(
-          //   keyboardType: TextInputType.emailAddress,
-          style: TextStyle(
-            color: Colors.black87,
-          ),
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.only(left: 12,),
-            hintText: "Teacher",
-            hintStyle: TextStyle(
-              color: Colors.black,
 
+      Padding(
+          padding: EdgeInsets.all(10.0),
+          // ignore: deprecated_member_use
+          child: FlatButton(
+            onPressed: ()
+            {
+              BuildContext context;
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) =>login_teacher(),
+              ),
+              );
+            },
+            padding: EdgeInsets.symmetric(
+              horizontal: 25.0,
+              vertical: 10.0,
             ),
-          ),
-        ),
+            color:Colors.greenAccent ,
+            textColor: Colors.black,
+            child: Text(
+              "Teacher",
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
+            ),
 
-      ),
+          )
+
+      )
 
     ],
 
   );
 }
+
 Widget buildguest() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
 
       SizedBox(height: 10,),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Color(0x665ac18e),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 4,
-                offset: Offset(0, 2),
-              )
-            ]
-        ),
-        height: 60,
-        child: TextField(
-          //   keyboardType: TextInputType.emailAddress,
-          style: TextStyle(
-            color: Colors.black87,
-          ),
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.only(left: 12,),
-            hintText: "Guest",
-            hintStyle: TextStyle(
-              color: Colors.black,
 
+      Padding(
+          padding: EdgeInsets.all(10.0),
+          // ignore: deprecated_member_use
+          child: FlatButton(
+            onPressed: ()
+            {
+              BuildContext context;
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) => login_student(),
+              ),
+              );
+            },
+            padding: EdgeInsets.symmetric(
+              horizontal: 25.0,
+              vertical: 10.0,
             ),
-          ),
-        ),
+            color:Colors.greenAccent ,
+            textColor: Colors.black,
+            child: Text(
+              "Guest",
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
+            ),
 
-      ),
+          )
+
+      )
 
     ],
 
   );
 }
+
 
 
 
