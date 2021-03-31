@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:sppu_student_application/Screens/Admin_Login.dart';
 import 'package:sppu_student_application/Screens/HomeScreen.dart';
 import 'package:sppu_student_application/Screens/PasswordReset_student.dart';
 import 'package:sppu_student_application/Screens/Profile_student.dart';
@@ -44,7 +45,7 @@ class myapp extends StatelessWidget{
    //home: login_teacher(),
   //  home: splash_screen(),
   //home:select_role(),
-  home: LoginPage(),
+  home: AdminLogin(),
     initialRoute: '/',
     onGenerateRoute: RouteGenerator.generatorRoute,
   );

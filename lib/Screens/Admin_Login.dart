@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'Admin_signup.dart';
- class LoginPage extends StatefulWidget{
+ class AdminLogin extends StatefulWidget{
   @override
-  State<StatefulWidget> createState() =>_LoginState();
+  State<StatefulWidget> createState() =>_AdminLogin();
  }
 
-class _LoginState extends State<LoginPage>{
+class _AdminLogin extends State<AdminLogin>{
    String _email;
    String _password;
   @override

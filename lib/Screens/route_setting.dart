@@ -9,7 +9,7 @@ class RouteGenerator {
 
     switch(settings.name){
       case '/':
-        return MaterialPageRoute(builder: (_) => LoginPage());
+        return MaterialPageRoute(builder: (_) => AdminLogin());
       case '/Admin_signup' :
         if(args is String){
           return MaterialPageRoute(

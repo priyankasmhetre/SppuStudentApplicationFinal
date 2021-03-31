@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:sppu_student_application/Screens/Admin_login.dart';
+import 'package:sppu_student_application/Screens/Admin_Login.dart';
 import 'package:sppu_student_application/Screens/login_student.dart';
 import 'package:sppu_student_application/Screens/teacher_login.dart';
 class select_role extends StatefulWidget {
@@ -93,7 +93,7 @@ Widget buildadmin() {
   {
   BuildContext context;
   Navigator.push(context, MaterialPageRoute(
-  builder: (context) => LoginPage(),
+  builder: (context) => AdminLogin(),
   ),
   );
   },
