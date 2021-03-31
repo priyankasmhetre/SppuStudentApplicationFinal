@@ -16,6 +16,7 @@ class _Admin_signup extends State <Admin_signup> {
    child: Column(
     children : <Widget>[
       Text("SignUp"),
+    // ignore: deprecated_member_use
     RaisedButton(
     child: Text("Submit"),
     onPressed: (){
