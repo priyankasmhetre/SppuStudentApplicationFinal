@@ -10,8 +10,6 @@ import 'package:sppu_student_application/Screens/teacher_Registration.dart';
 import 'package:sppu_student_application/Screens/teacher_login.dart';
 import './Screens/Qrhomepage.dart';
 import './Screens/scan.dart';
-import './Screens/Admin_login.dart';
-
 import 'package:sppu_student_application/Screens/TeacherHomeScreen.dart';
 import 'package:sppu_student_application/Screens/login_student.dart';
 import 'package:sppu_student_application/Screens/updateProfile.dart';
@@ -20,6 +18,7 @@ import './Screens/teacherProfile.dart';
 
 
 import 'Screens/Registration_student.dart';
+import 'Screens/route_setting.dart';
 
 
 void main()=> runApp(myapp());
@@ -44,8 +43,10 @@ class myapp extends StatelessWidget{
     //home: teacher_Registration(),
    //home: login_teacher(),
   //  home: splash_screen(),
-  home:select_role(),
-  //home: LoginPage(),
+  //home:select_role(),
+  home: LoginPage(),
+    initialRoute: '/',
+    onGenerateRoute: RouteGenerator.generatorRoute,
   );
 }
 
