@@ -180,12 +180,6 @@ class _SPVScreenState extends State<Student_SPV>{
                                   ],
                                 ),
                               ),
-
-
-
-
-
-
                             ],
                             crossAxisCount:2),
                       ),

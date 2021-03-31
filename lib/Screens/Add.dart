@@ -193,6 +193,7 @@ class _AddScreenState extends State<Add_Screen>{
                               ),
 
                               Text("Syllabus"),
+
                             ],
                           ),
                         ),
