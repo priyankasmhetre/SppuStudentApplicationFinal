@@ -30,10 +30,10 @@ class _teacher extends State<teacher_Registration> {
 
           },
           ),
-          title: Row(mainAxisAlignment: MainAxisAlignment.center,
+          title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 115,vertical: 80),
                 child: Image.asset("assets/Images/logo.jpeg",
                   height: 30,alignment: Alignment.center,),
               ),
@@ -76,7 +76,7 @@ class _teacher extends State<teacher_Registration> {
                               Padding(
                                 padding: const EdgeInsets.all(22.0),
                                 child: Text(
-                                  " Teacher Registration Page",
+                                  "Registration Page",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 30,

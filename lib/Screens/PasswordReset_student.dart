@@ -22,10 +22,10 @@ class _PasswordReset extends State<PasswordReset> {
             icon: Icon(Icons.arrow_back, color: Colors.white,
             ), onPressed: () {  },
           ),
-          title: Row(mainAxisAlignment: MainAxisAlignment.center,
+          title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal:85,vertical: 80),
                 child: Image.asset("assets/Images/logo.jpeg",
                   height: 30,alignment: Alignment.center,),
               ),
@@ -68,7 +68,7 @@ class _PasswordReset extends State<PasswordReset> {
                               Padding(
                                 padding: const EdgeInsets.all(22.0),
                                 child: Text(
-                                  " Student Password Set Page",
+                                  "Password Set Page",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 30,

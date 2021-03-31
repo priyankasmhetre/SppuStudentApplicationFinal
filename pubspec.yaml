@@ -57,7 +57,17 @@ flutter:
   assets:
     - assets/Images/uni_image.jpeg
     - assets/Images/attendence.png
-    - assets/Images/Add2.png
+    - assets/Images/Add.png
+    - assets/Images/book.png
+    - assets/Images/lecture.png
+    - assets/Images/pdf.png
+    - assets/Images/play.png
+    - assets/Images/test.png
+
+
+
+
+
 
 
     - assets/Images/logo.jpeg

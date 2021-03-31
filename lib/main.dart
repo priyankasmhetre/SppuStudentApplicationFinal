@@ -1,8 +1,10 @@
 import "package:flutter/material.dart";
+import 'package:sppu_student_application/Screens/Add.dart';
 import 'package:sppu_student_application/Screens/HomeScreen.dart';
 import 'package:sppu_student_application/Screens/PasswordReset_student.dart';
 import 'package:sppu_student_application/Screens/Profile_student.dart';
 import 'package:sppu_student_application/Screens/Qrcode.dart';
+import 'package:sppu_student_application/Screens/Student_SPV.dart';
 import 'package:sppu_student_application/Screens/Verify_student.dart';
 import 'package:sppu_student_application/Screens/teacher_Registration.dart';
 import 'package:sppu_student_application/Screens/teacher_login.dart';
@@ -24,22 +26,25 @@ class myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
-
-   // home:Profile_student(),
-  //home: updateProfile(),
-  //home:teacherProfile(),
-    // home: update_teacher_profile(),
-   //home:HomeScreen(),
-  //home: Registration_student(),
-   // home: login_student(),
-   //home:GeneratePage(),
    // home: PasswordReset(),
-    //home: Verify_student(),
-   // home:QrHomePage(),
-   // home: ScanPage(),
-     //home: TeacherHomeScreen(),
-    //home: teacher_Registration(),
-   // home: login_teacher(),
+   // home: Verify_student(),
+   //home:Profile_student(),
+  //home: updateProfile(),
+   //home:HomeScreen(),
+   // home: Registration_student(),
+   // home: login_student(),
+    //home: Student_SPV(),
+
+   // home:GeneratePage(),
+    // home:QrHomePage(),
+  // home: ScanPage(),
+
+  //  home: TeacherHomeScreen(),
+    //home: Add_Screen(),
+   // home: teacher_Registration(),
+   //home: login_teacher(),
+   // home:teacherProfile(),
+     home: update_teacher_profile(),
   );
 }
 

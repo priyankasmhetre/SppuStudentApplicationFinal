@@ -38,14 +38,21 @@ class student_State extends State<Profile_student> {
           );
         },
         ),
-        title: Row(mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/Images/logo.jpeg",
-              height: 30,alignment: Alignment.center,),
-          ],
-        ),
+
+          title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+
+                 Padding(
+                   padding: const EdgeInsets.symmetric(vertical: 80,horizontal: 115),
+                   child: Image.asset("assets/Images/logo.jpeg",
+                    height: 30,alignment: Alignment.center,),
+                 ),
+            ],
+          ),
+
         backgroundColor :  Color(0xcc5ac18e),
       ),
+
         body: SingleChildScrollView(
             child: Container(
                 height: _screenSize.height * 2.0,
@@ -94,6 +101,7 @@ class student_State extends State<Profile_student> {
                                   children:<Widget> [
                                     CircleAvatar(
                                       radius: 50,
+                                   backgroundColor: Color(0xcc5ac18e) ,
                                    backgroundImage: imageFile==null
                                         ?AssetImage("assets.images/logo.jpeg")
                                         :FileImage(File(imageFile.path)),

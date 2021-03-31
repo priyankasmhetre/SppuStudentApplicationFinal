@@ -64,13 +64,17 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
               title: Text("Profile"),
               leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:30,),
             ),
-            ListTile(
-              title: Text("Add"),
-              leading: Image.asset("assets/Images/Add2.png",
-                height: 30,),
-               //leading:  SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904437.svg",height:30,),
 
-            ),
+               ListTile(
+                title: Text("Add"),
+                leading:
+                   Image.asset("assets/Images/Add.png",
+                    height: 30,),
+                ),
+            
+              
+
+
 
             ListTile(
               title: Text(' Display Attendance'),
@@ -153,13 +157,15 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Column(
-                              children:<Widget> [
-                                Image.asset("assets/Images/Add2.png",
-                                ),
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children:<Widget> [
+                                  Image.asset("assets/Images/Add2.png",
+                                  ),
 
-                                Text(" Add "),
-                              ],
+                                  Text(" Add "),
+                                ],
+                              ),
                             ),
                           ),
 

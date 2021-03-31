@@ -81,16 +81,13 @@ class student_State extends State<Registration_student> {
             icon: Icon(Icons.arrow_back, color: Colors.white,
             ), onPressed: () {  },
           ),
-          title: Row(mainAxisAlignment: MainAxisAlignment.center,
+          title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 40),
-                  child: Image.asset("assets/Images/logo.jpeg",
-                      height: 30,alignment: Alignment.center,),
-                ),
-
-
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 115,vertical: 80),
+                child: Image.asset("assets/Images/logo.jpeg",
+                  height: 30,alignment: Alignment.center,),
+              ),
             ],
           ),
           backgroundColor :  Color(0xcc5ac18e),

@@ -1,4 +1,6 @@
-import 'dart:js';
+
+
+
 
 import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
@@ -130,6 +132,7 @@ Widget forgotbutton()
 
 
 
+
       padding: EdgeInsets.only(right: 0),
 
       child: Text(
@@ -192,10 +195,10 @@ class teacher_state extends State<login_teacher> {
 
           },
           ),
-          title: Row(mainAxisAlignment: MainAxisAlignment.center,
+          title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 115,vertical:80),
                 child: Image.asset("assets/Images/logo.jpeg",
                   height: 30,alignment: Alignment.center,),
               ),
@@ -236,7 +239,7 @@ class teacher_state extends State<login_teacher> {
                           Padding(
                             padding: const EdgeInsets.all(22.0),
                             child: Text(
-                              " Teacher Login Page",
+                              "Login Page",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 30,
