@@ -1,4 +1,4 @@
-import web.GradleException
+import com.example.sppu_student_application.GradleException
 
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
@@ -59,8 +59,8 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-   // classpath 'com.android.tools.build:gradle:2.3.3'
-  //  classpath 'com.android.tools.build:gradle:3.0.0-alpha4'
+    classpath 'com.android.tools.build:gradle:2.3.3'
+    classpath 'com.android.tools.build:gradle:3.0.0-alpha4'
     implementation platform('com.google.firebase:firebase-bom:26.8.0')
     implementation 'com.google.firebase:firebase-analytics'
 

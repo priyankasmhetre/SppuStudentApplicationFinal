@@ -1,4 +1,4 @@
-import "package:flutter/material.dart";
+  import "package:flutter/material.dart";
 import 'package:sppu_student_application/Screens/Admin_Login.dart';
 import 'package:sppu_student_application/Screens/HomeScreen.dart';
 import 'package:sppu_student_application/Screens/PasswordReset_student.dart';
@@ -19,11 +19,11 @@ import './Screens/teacherProfile.dart';
 
 
 import 'Screens/Registration_student.dart';
-import 'Screens/route_setting.dart';
 
 
-void main()=> runApp(myapp());
-class myapp extends StatelessWidget{
+void main()=> runApp(MyApp());
+
+class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -43,11 +43,9 @@ class myapp extends StatelessWidget{
      //home: TeacherHomeScreen(),
     //home: teacher_Registration(),
    //home: login_teacher(),
-  //  home: splash_screen(),
+   // home: splash_screen(),
   //home:select_role(),
   home: AdminLogin(),
-    initialRoute: '/',
-    onGenerateRoute: RouteGenerator.generatorRoute,
   );
 }
 
