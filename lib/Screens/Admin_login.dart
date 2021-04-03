@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
-
-
 class LoginPage extends StatefulWidget{
   LoginPage({this.auth});
   final BaseAuth auth;
@@ -36,11 +33,11 @@ class _LoginPageState extends State<LoginPage> {
       try {
         if(_formType == FormType.login){
           String userId = await widget.auth.signInWithEmailAndPassword(_email, _password);
-          /* final User user = (await FirebaseAuth.instance
+           final User user = (await FirebaseAuth.instance
               .signInWithEmailAndPassword(
             email: _email,
             password: _password,
-          )).user;*/
+          )).user;
           print('Signed in : ${userId}');
         }
         else{
@@ -115,12 +112,14 @@ class _LoginPageState extends State<LoginPage> {
   List<Widget> buildSubmitButtons() {
     if (_formType == FormType.login) {
       return [
+        // ignore: deprecated_member_use
         new RaisedButton(
           onPressed: validateAndSubmit,
           child: new Text(
             'Login', style: new TextStyle(fontSize: 20.0),
           ),
         ),
+        // ignore: deprecated_member_use
         new FlatButton(
           child: new Text(
             'Create an account', style: new TextStyle(fontSize: 20.0),),
@@ -130,12 +129,14 @@ class _LoginPageState extends State<LoginPage> {
     }
     else {
       return [
+        // ignore: deprecated_member_use
         new RaisedButton(
           onPressed: validateAndSubmit,
           child: new Text(
             'create an account', style: new TextStyle(fontSize: 20.0),
           ),
         ),
+        // ignore: deprecated_member_use
         new FlatButton(
           child: new Text(
             'Have an account? Login', style: new TextStyle(fontSize: 20.0),),
