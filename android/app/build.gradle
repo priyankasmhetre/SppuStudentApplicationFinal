@@ -38,7 +38,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.sppu_student_application"
-        minSdkVersion 16
+        minSdkVersion 18
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -61,7 +61,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     classpath 'com.android.tools.build:gradle:2.3.3'
     classpath 'com.android.tools.build:gradle:3.0.0-alpha4'
-    implementation platform('com.google.firebase:firebase-bom:26.8.0')
-    implementation 'com.google.firebase:firebase-analytics'
+   // implementation platform 'com.google.firebase:firebase-bom:26.8.0'
+//    implementation 'com.google.firebase:firebase-analytics'
 
 }

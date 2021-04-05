@@ -614,11 +614,6 @@ class student_State extends State<Registration_student> {
     ));
 
 
-
-
-
-
-
   }
 }
 }*/
