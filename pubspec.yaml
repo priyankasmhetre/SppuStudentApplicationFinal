@@ -28,8 +28,8 @@ dependencies:
   qr_flutter: ^3.2.0
   path_provider : ^1.6.0
   firebase_auth: ^1.0.0
-
-
+  splashscreen: ^1.3.5
+  animated_splash_screen: ^1.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -55,12 +55,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/Images/uni_image.jpeg
-    - assets/Images/attendence.png
-    - assets/Images/Add2.png
-
-
-    - assets/Images/logo.jpeg
+    - assets.Images/
+    - assets.Images/
+    - assets.Images/
+    - assets.Images/
 
 
 
