@@ -1,6 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sppu_student_application/Screens/AddLectureNotes.dart';
+import 'package:sppu_student_application/Screens/AddSyllabus.dart';
+import 'package:sppu_student_application/Screens/AddVideoes.dart';
+import 'package:sppu_student_application/Screens/Notification.dart';
+import 'package:sppu_student_application/Screens/Send_message.dart';
+import 'package:sppu_student_application/Screens/TeacherHomeScreen.dart';
 class Add_Screen extends StatefulWidget{
 
   @override
@@ -23,8 +29,11 @@ class _AddScreenState extends State<Add_Screen>{
         title: Row(mainAxisAlignment: MainAxisAlignment.center,
 
           children: [
-            Image.asset("assets/Images/logo.jpeg",
-              height: 30,alignment: Alignment.center,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 115,vertical: 80),
+              child: Image.asset("assets/Images/logo.jpeg",
+                height: 30,alignment: Alignment.center,),
+            ),
           ],
         ),
 
@@ -55,11 +64,20 @@ class _AddScreenState extends State<Add_Screen>{
               ),
             ),
 
-            ListTile(
-              title: Text("Home"),
+            InkWell(
+              onTap: (){
+                Navigator.of(context)
+                    .push(
+                    MaterialPageRoute(
+                      builder: (context) => TeacherHomeScreen(),)
+                );
+              },
+              child: ListTile(
+                title: Text("Home"),
 
-              leading: Image.asset("assets/Images/logo.jpeg",
-                height: 30,),
+                leading: Image.asset("assets/Images/logo.jpeg",
+                  height: 30,),
+              ),
             ),
             ListTile(
               title: Text("Profile"),
@@ -127,74 +145,126 @@ class _AddScreenState extends State<Add_Screen>{
                             ],
                           ),
                         ),
-                        Card(
+                        InkWell(
+                          onTap: (){
+                            Navigator.of(context)
+                                .push(
+                                MaterialPageRoute(
+                                  builder: (context) => sendMassage(),)
+                            );
 
-                          shape: RoundedRectangleBorder(
+                          },
+                          child: Card(
 
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
+                            shape: RoundedRectangleBorder(
 
-                            children:<Widget> [
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
 
-                              Image.asset("assets/Images/lecture.png",height: 130,
-                              ),
+                              children:<Widget> [
 
-                              Text("Extra Lectures"),
-                            ],
-                          ),
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
+                                Image.asset("assets/Images/lecture.png",height: 130,
+                                ),
 
-                              Image.asset("assets/Images/pdf.png",height: 130,
-                              ),
-                              Text("Pdf"),
-                            ],
+                                Text("Extra Lectures"),
+                              ],
+                            ),
                           ),
                         ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
+                        InkWell(
+                          onTap: (){
+                            Navigator.of(context)
+                                .push(
+                                MaterialPageRoute(
+                                  builder: (context) => AddlectureNotes(),)
+                            );
 
-                              Image.asset("assets/Images/test.png",height: 130,
-                              ),
-                              Text("Exam Notification"),
-                            ],
+                          },
+
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+
+                                Image.asset("assets/Images/pdf.png",height: 130,
+                                ),
+                                Text("Lecture Notes"),
+                              ],
+                            ),
+                          ),
+                        ),
+                        InkWell(
+                          onTap: (){
+                            Navigator.of(context)
+                                .push(
+                                MaterialPageRoute(
+                                  builder: (context) => Notification1(),)
+                            );
+
+                          },
+
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+
+                                Image.asset("assets/Images/test.png",height: 130,
+                                ),
+                                Text("Exam Notification"),
+                              ],
+                            ),
                           ),
                         ),
 
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              Image.asset("assets/Images/play.png",height: 130,
-                              ),
-                              Text("Videos"),
-                            ],
+                        InkWell(
+                          onTap: (){
+                            Navigator.of(context)
+                                .push(
+                                MaterialPageRoute(
+                                  builder: (context) => AddVideoes(),)
+                            );
+
+                          },
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+                                Image.asset("assets/Images/play.png",height: 130,
+                                ),
+                                Text("Videos"),
+                              ],
+                            ),
                           ),
                         ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              Image.asset("assets/Images/book.png",height: 130,
-                              ),
+                        InkWell(
+                          onTap: (){
+                          Navigator.of(context)
+                          .push(
+                             MaterialPageRoute(
+                          builder: (context) => AddSyllabus(),)
+                         );
+                      },
 
-                              Text("Syllabus"),
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+                                Image.asset("assets/Images/book.png",height: 130,
+                                ),
 
-                            ],
+                                Text("Syllabus"),
+
+                              ],
+                            ),
                           ),
                         ),
 

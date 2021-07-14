@@ -1,10 +1,19 @@
-
 import 'dart:io';
 
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:sppu_student_application/Screens/FetchSubject.dart';
 import 'package:sppu_student_application/Screens/HomeScreen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:sppu_student_application/Screens/Verify_student.dart';
+import 'package:sppu_student_application/Screens/YourSuject.dart';
+import 'package:sppu_student_application/Screens/finalFetchSubject.dart';
+import 'package:sppu_student_application/Screens/login.dart';
+import 'package:sppu_student_application/Screens/years.dart';
 
 class Profile_student extends StatefulWidget {
   @override
@@ -13,45 +22,82 @@ class Profile_student extends StatefulWidget {
   }
 }
 class student_State extends State<Profile_student> {
-   PickedFile imageFile;
-   ImagePicker _picker = ImagePicker();
+  final db = FirebaseFirestore.instance;
+  User user = FirebaseAuth.instance.currentUser;
+  PickedFile imageFile;
+  ImagePicker _picker = ImagePicker();
+  String Fullname;
+  int RollNo;
+  String CourseName;
+  String Email;
+  String ID;
+  int MobNO;
+  String BlooG;
+  String Adress;
+  String valueChoose;
+  String valueChoosen;
+  addData1() {
+    Map<String,dynamic> demodata={"FullName":Fullname,"rollNo": RollNo,"Year":valueChoose,"Semister":valueChoosen,"ID":ID,"Email":Email,"MobNO":MobNO
+      ,"BloodGroup":BlooG,
+      "Adress":Adress};
+    User user=FirebaseAuth.instance.currentUser;
+    FirebaseFirestore.instance.collection('Profile').doc(user.uid).set(demodata
 
-   String valueChoose;
-   String valueChoosen;
+    );
 
-  List listitem = ['1','2','3'];
-  List listitems =  ['1','2','3','4','5','6'];
 
+
+
+
+  }
+
+
+
+
+
+  List listitem = [
+    " year-I",
+    " year-II",
+    " year-III"
+  ];
+  List listitems = [
+    " Sem-I",
+    " Sem-II",
+    " Sem-III",
+    " Sem-IV",
+    " Sem-V",
+    " Sem-VI"
+  ];
   @override
-    Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     final _screenSize = MediaQuery.of(context).size;
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white,
-        ), onPressed: () {
-          Navigator.of(context)
-              .push(
-              MaterialPageRoute(
-                builder: (context) => HomeScreen(),)
-          );
-        },
-        ),
+        appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.white,
+            ), onPressed: () {
+            Navigator.of(context)
+                .push(
+                MaterialPageRoute(
+                    builder: (context) => Verify_student())
+            );
+          },
+          ),
 
           title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
 
-                 Padding(
-                   padding: const EdgeInsets.symmetric(vertical: 80,horizontal: 115),
-                   child: Image.asset("assets/Images/logo.jpeg",
-                    height: 30,alignment: Alignment.center,),
-                 ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 115,vertical: 80),
+                child: Image.asset("assets/Images/logo.jpeg",
+                  height: 30,alignment: Alignment.center,),
+              ),
             ],
           ),
 
-        backgroundColor :  Color(0xcc5ac18e),
-      ),
+          backgroundColor :  Color(0xcc5ac18e),
+        ),
 
         body: SingleChildScrollView(
             child: Container(
@@ -101,24 +147,24 @@ class student_State extends State<Profile_student> {
                                   children:<Widget> [
                                     CircleAvatar(
                                       radius: 50,
-                                   backgroundColor: Color(0xcc5ac18e) ,
-                                   backgroundImage: imageFile==null
-                                        ?AssetImage("assets.images/logo.jpeg")
-                                        :FileImage(File(imageFile.path)),
+                                      backgroundColor: Color(0xcc5ac18e) ,
+                                      backgroundImage: imageFile==null
+                                          ?AssetImage("assets.images/logo.jpeg")
+                                          :FileImage(File(imageFile.path)),
 
                                     ),
                                     Positioned(bottom: 1,right: 1,
                                         child:Container(
                                           height: 20,
                                           width: 20,
-                                         child:InkWell(
-                                           onTap: (){
-                                             showModalBottomSheet(context: context,
-                                                 builder: ((builder)=>bottomsheet()),
-                                             );
-                                           },
-                                           child: Icon(Icons.add_a_photo,color: Colors.white,),
-                                         ),
+                                          child:InkWell(
+                                            onTap: (){
+                                              showModalBottomSheet(context: context,
+                                                builder: ((builder)=>bottomsheet()),
+                                              );
+                                            },
+                                            child: Icon(Icons.add_a_photo,color: Colors.white,),
+                                          ),
                                           decoration: BoxDecoration(
                                             color: Colors.redAccent,
                                             borderRadius: BorderRadius.circular(20),
@@ -135,10 +181,7 @@ class student_State extends State<Profile_student> {
                                 height: 10,
                               ),
                               build_Roll_No(),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              build_Course(),
+
                               SizedBox(
                                 height: 10,
                               ),
@@ -186,35 +229,35 @@ class student_State extends State<Profile_student> {
       height: 100,
       width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 20
+          horizontal: 20,
+          vertical: 20
       ),
       child: Column(
         children:<Widget> [
           Text(
             "Choose a Profile",
             style: TextStyle(
-            fontSize: 20,
-          ),),
+              fontSize: 20,
+            ),),
           SizedBox(
             height: 20,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-           children:<Widget> [
-             // ignore: deprecated_member_use
-             FlatButton.icon( icon:Icon(Icons.camera_alt),onPressed:(){
-               takePhoto(ImageSource.camera);
-             },
-                 label:Text("Camera")
-             ),
-             // ignore: deprecated_member_use
-             FlatButton.icon( icon:Icon(Icons.image),onPressed:(){
-               takePhoto(ImageSource.gallery);
-             },
-                 label:Text("Gallary")
-             )
-           ]
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:<Widget> [
+                // ignore: deprecated_member_use
+                FlatButton.icon( icon:Icon(Icons.camera_alt),onPressed:(){
+                  takePhoto(ImageSource.camera);
+                },
+                    label:Text("Camera")
+                ),
+                // ignore: deprecated_member_use
+                FlatButton.icon( icon:Icon(Icons.image),onPressed:(){
+                  takePhoto(ImageSource.gallery);
+                },
+                    label:Text("Gallary")
+                )
+              ]
           )
         ],
       ),
@@ -248,6 +291,9 @@ class student_State extends State<Profile_student> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              Fullname=value;
+            }),
             //   keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -292,6 +338,9 @@ class student_State extends State<Profile_student> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              Fullname=value;
+            }),
             //   keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -335,6 +384,9 @@ class student_State extends State<Profile_student> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              RollNo=int.parse(value);
+            }),
             //   keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -377,6 +429,10 @@ class student_State extends State<Profile_student> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              ID=value;
+            }),
+            //
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -406,9 +462,9 @@ class student_State extends State<Profile_student> {
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
-               color: Colors.white,
-               borderRadius: BorderRadius.circular(10),
-               boxShadow: [
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 4,
@@ -416,13 +472,16 @@ class student_State extends State<Profile_student> {
                 )
               ]
           ),
-              height: 60,
+          height: 60,
           child: TextField(
-              keyboardType: TextInputType.emailAddress,
-              style: TextStyle(
+            onChanged: (value) => setState(() {
+              Email=value;
+            }),
+            keyboardType: TextInputType.emailAddress,
+            style: TextStyle(
               color: Colors.black87,
             ),
-              decoration: InputDecoration(
+            decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(left: 12,),
               hintText: "Mail Address Register To University",
@@ -457,6 +516,9 @@ class student_State extends State<Profile_student> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              BlooG=value;
+            }),
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -496,6 +558,9 @@ class student_State extends State<Profile_student> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              MobNO=int.parse(value);
+            }),
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -525,6 +590,9 @@ class student_State extends State<Profile_student> {
 
         SizedBox(height: 10,),
         Container(
+          padding: EdgeInsets.only(
+            left: 12,
+          ),
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
@@ -539,40 +607,40 @@ class student_State extends State<Profile_student> {
           ),
           height: 60,
           child: DropdownButton(
-           hint: Padding(
-             padding: const EdgeInsets.all(8.0),
-             child: Text("Select the Year",
+            hint: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Select the Year",
                 style: TextStyle(
-                 color: Colors.black87,
-                    ),),
-           ),
+                  color: Colors.black87,
+                ),),
+            ),
 
-                 icon: Icon(Icons.arrow_drop_down),
-               isExpanded: true,
-                   style: TextStyle(
-                color: Colors.black,
-                     fontSize: 17,
-                     ),
-                  value: valueChoose,
-                       onChanged: (newValue) {
-                             setState(() {
-                         valueChoose = newValue;
-                        });
-                         },
-                        items: listitem.map((valueitem) {
-                     return DropdownMenuItem(
-                     value: valueitem,
-                      child: Text(valueitem),
-                       );
-                            }).toList(),
-                        ),
+            icon: Icon(Icons.arrow_drop_down),
+            isExpanded: true,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 17,
+            ),
+            value: valueChoose,
+            onChanged: (newValue) {
+              setState(() {
+                valueChoose = newValue;
+              });
+            },
+            items: listitem.map((valueitem) {
+              return DropdownMenuItem(
+                value: valueitem,
+                child: Text(valueitem),
+              );
+            }).toList(),
+          ),
 
-                    ),
+        ),
 
-                ],
+      ],
 
-                   );
-                }
+    );
+  }
 
   Widget build_Sem() {
     return Column(
@@ -581,6 +649,9 @@ class student_State extends State<Profile_student> {
 
         SizedBox(height: 10,),
         Container(
+          padding: EdgeInsets.only(
+            left: 12,
+          ),
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
@@ -595,36 +666,36 @@ class student_State extends State<Profile_student> {
           ),
           height: 60,
           child: DropdownButton(
-                   hint: Padding(
-                     padding: const EdgeInsets.all(8.0),
-                     child: Text("Select the Semester",
-                      style: TextStyle(
-                          color: Colors.black87,
-                       ),),
-                   ),
+            hint: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Select the Semester",
+                style: TextStyle(
+                  color: Colors.black87,
+                ),),
+            ),
 
-                      icon: Icon(Icons.arrow_drop_down),
-                            isExpanded: true,
-                        style: TextStyle(
-                          color: Colors.black,
-                           fontSize: 17,
-                         ),
-                    value: valueChoosen,
-                     onChanged: (newValue) {
-                       setState(() {
-                  valueChoosen= newValue;
-                   });
-                },
-                   items: listitems.map((valueitem) {
-                    return DropdownMenuItem(
-                   value: valueitem,
-                  child: Text(valueitem),
-                     );
-               }).toList(),
-             ),
+            icon: Icon(Icons.arrow_drop_down),
+            isExpanded: true,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 17,
+            ),
+            value: valueChoosen,
+            onChanged: (newValue) {
+              setState(() {
+                valueChoosen= newValue;
+              });
+            },
+            items: listitems.map((valueitem) {
+              return DropdownMenuItem(
+                value: valueitem,
+                child: Text(valueitem),
+              );
+            }).toList(),
+          ),
 
-              ),
-    ],
+        ),
+      ],
     );
   }
 
@@ -648,6 +719,9 @@ class student_State extends State<Profile_student> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              Adress=value;
+            }),
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -672,7 +746,14 @@ class student_State extends State<Profile_student> {
       // ignore: deprecated_member_use
       child: RaisedButton(
         elevation: 5,
-        onPressed: () => print("Save"),
+        onPressed: () {
+          addData1();
+          Navigator.of(context)
+              .push(
+              MaterialPageRoute(
+                  builder: (context) =>login())
+          );
+        },
         padding: EdgeInsets.all(15),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
@@ -689,4 +770,6 @@ class student_State extends State<Profile_student> {
       ),
     );
   }
+
+
 }

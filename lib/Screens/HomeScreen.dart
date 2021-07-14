@@ -1,6 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sppu_student_application/Screens/Fetch.dart';
+import 'package:sppu_student_application/Screens/FetchSubject.dart';
+import 'package:sppu_student_application/Screens/Student_SPV.dart';
+import 'package:sppu_student_application/Screens/select_role.dart';
+import 'package:sppu_student_application/pdf/Fetch_timetable.dart';
+import 'package:sppu_student_application/pdf/Fetch_result.dart';
 class HomeScreen extends StatefulWidget{
 
   @override
@@ -12,9 +19,15 @@ class HomeScreen extends StatefulWidget{
 }
 
 class _HomeScreenState extends State<HomeScreen>{
+  FirebaseAuth _auth=FirebaseAuth.instance;
+  Future<void>logout() async{
+    User user=_auth.signOut() as User;
+
+  }
   @override
   Widget build(BuildContext context) {
     var size=MediaQuery.of(context).size;
+
     // TODO: implement build
     return Scaffold(
       //backgroundColor: Color(0xff5ac18e),
@@ -55,33 +68,61 @@ class _HomeScreenState extends State<HomeScreen>{
               ),
             ),
 
-            ListTile(
+           /* ListTile(
               title: Text("Home"),
               leading: Image.asset("assets/Images/logo.jpeg",
               height: 30,),
 
-            ),
-            ListTile(
-              title: Text("Profile"),
-               leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:30,),
+            ),*/
+            InkWell(
+              onTap: (){
+                Navigator.of(context)
+                    .push(
+                    MaterialPageRoute(
+                      builder: (context) =>Fetch(),)
+                );
+              },
 
+              child: ListTile(
+                title: Text("Profile"),
+                 leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:30,),
+
+              ),
             ),
             ListTile(
-              title: Text("exams"),
+              title: Text(" upcoming exams"),
               leading:  SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904437.svg",height:30,),
 
             ),
-            ListTile(
-              title: Text("timetable"),
-              leading:SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904565.svg",height:30,),
+            InkWell(
+              onTap: (){
+                Navigator.of(context)
+                    .push(
+                    MaterialPageRoute(
+                        builder: (context) =>FetchTimetable())
+                );
+              },
+              child: ListTile(
+                title: Text("timetable"),
+                leading:SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904565.svg",height:30,),
 
+              ),
             ),
-            ListTile(
-              title: Text('Result'),
-             leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904527.svg",height:30,),
+            InkWell(
+             onTap: () {
+               Navigator.of(context)
+                   .push(
+                   MaterialPageRoute(
+                       builder: (context) => Fetch_result())
+               );
+             },
+              child: ListTile(
+                title: Text('Result'),
+               leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904527.svg",height:30,),
 
 
 
+              ),
             ),
             ListTile(
               title: Text('Attendance'),
@@ -91,20 +132,43 @@ class _HomeScreenState extends State<HomeScreen>{
               ),
 
             ),
-            ListTile(
-              title: Text('Fee Receipt'),
-              leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904221.svg",height:30,),
+            InkWell(
+              onTap: (){
+                Navigator.of(context)
+                    .push(
+                    MaterialPageRoute(
+                      builder: (context) =>Student_SPV())
+                );
 
+              },
+              child: ListTile(
+                title: Text('Course Material'),
+                leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904235.svg",height:30,),
+
+              ),
             ),
-            ListTile(
-              title: Text('Logout'),
-              leading: Icon(Icons.logout),
+            InkWell(
+              onTap: (){
+                logout();
+                Navigator.of(context)
+                    .push(
+                    MaterialPageRoute(
+                        builder: (context) =>select_role())
+                );
+
+              },
+
+              child: ListTile(
+                title: Text('Logout'),
+                leading: Icon(Icons.logout),
 
 
+              ),
             ),
           ],
         ),
       ),
+
       body: Stack(
         children: <Widget>[
 
@@ -121,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen>{
                       crossAxisSpacing: 10,
                       primary:false,
                       children:<Widget> [
-                        Card(
+                       /* Card(
 
                           shape: RoundedRectangleBorder(
 
@@ -136,27 +200,46 @@ class _HomeScreenState extends State<HomeScreen>{
                               Text("Home"),
                             ],
                           ),
+                        ),*/
+                        InkWell(
+                          onTap: (){
+                            Navigator.of(context)
+                                .push(
+                                MaterialPageRoute(
+                                  builder: (context) =>Fetch(),)
+                            );
+
+                          },
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+                                SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:128,),
+                                Text("Profile"),
+                              ],
+                            ),
+                          ),
                         ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:128,),
-                              Text("Profile"),
-                            ],
-                          ),
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904527.svg",height:128,),
-                              Text("Result"),
-                            ],
+                        InkWell(
+                          onTap: (){
+                            Navigator.of(context)
+                                .push(
+                                MaterialPageRoute(
+                                    builder: (context) =>Fetch_result())
+                            );
+                          },
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+                                SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904527.svg",height:128,),
+                                Text("Result"),
+                              ],
+                            ),
                           ),
                         ),
                         Card(
@@ -170,18 +253,28 @@ class _HomeScreenState extends State<HomeScreen>{
                             ],
                           ),
                         ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904235.svg",height:128,),
-                              Text("Courses"),
-                            ],
+                        InkWell(
+                          onTap: (){
+                            Navigator.of(context)
+                                .push(
+                                MaterialPageRoute(
+                                  builder: (context) =>Student_SPV())
+                            );
+
+                          },
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+                                SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904235.svg",height:128,),
+                                Text("Course Material"),
+                              ],
+                            ),
                           ),
                         ),
-                        Card(
+                      /*  Card(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -191,17 +284,27 @@ class _HomeScreenState extends State<HomeScreen>{
                               Text("Fee Receipt"),
                             ],
                           ),
-                        ),
-                        Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Column(
-                            children:<Widget> [
-                              SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904565.svg",height:128,),
+                        ),*/
+                        InkWell(
+                          onTap: (){
+                            Navigator.of(context)
+                                .push(
+                                MaterialPageRoute(
+                                    builder: (context) =>FetchTimetable())
+                            );
 
-                              Text("Timetale"),
-                            ],
+                          },
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Column(
+                              children:<Widget> [
+                                SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904565.svg",height:128,),
+
+                                Text("Timetale"),
+                              ],
+                            ),
                           ),
                         ),
                         Card(
@@ -238,5 +341,6 @@ class _HomeScreenState extends State<HomeScreen>{
 
     );
   }
+
 
 }

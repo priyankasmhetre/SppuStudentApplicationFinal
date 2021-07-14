@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import"package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sppu_student_application/Screens/Add.dart';
+import 'package:sppu_student_application/Screens/FetchTeacher_Profile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:sppu_student_application/Screens/select_role.dart';
 
 
 class  TeacherHomeScreen extends StatefulWidget{
@@ -14,8 +19,32 @@ class  TeacherHomeScreen extends StatefulWidget{
 }
 
 class _TeacherHomeScreenState extends State<TeacherHomeScreen>{
+  FirebaseAuth _auth=FirebaseAuth.instance;
+  Future<void>logout() async{
+    User user=_auth.signOut() as User;
+
+  }
 String valueChoose;
+String sub1;
+String pdf1;
 List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification'];
+addData1() {
+  User user = FirebaseAuth.instance.currentUser;
+  FirebaseFirestore.instance.collection('Subject').doc(user.uid).set({
+    "Subject": sub1,
+
+
+  }).then((value) {
+
+    FirebaseFirestore.instance
+        .collection("Subject")
+        .doc(user.uid)
+        .collection("pdf")
+        .add({
+      "pdf": pdf1,
+    });
+  });
+}
 
 @override
   Widget build(BuildContext context) {
@@ -60,17 +89,36 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
               leading: Image.asset("assets/Images/logo.jpeg",
                 height: 30,),
             ),
-            ListTile(
-              title: Text("Profile"),
-              leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:30,),
+            InkWell(
+               onTap: (){
+                 Navigator.of(context)
+                     .push(
+                     MaterialPageRoute(
+                       builder: (context) =>FetchTeacherProfile(),)
+                 );
+               },
+
+              child: ListTile(
+                title: Text("Profile"),
+                leading: SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:30,),
+              ),
             ),
 
-               ListTile(
-                title: Text("Add"),
-                leading:
-                   Image.asset("assets/Images/Add.png",
-                    height: 30,),
-                ),
+               InkWell(
+                 onTap: (){
+                   Navigator.of(context)
+                       .push(
+                       MaterialPageRoute(
+                         builder: (context) =>Add_Screen(),)
+                   );
+                 },
+                 child: ListTile(
+                  title: Text("Add"),
+                  leading:
+                     Image.asset("assets/Images/Add.png",
+                      height: 30,),
+                  ),
+               ),
             
               
 
@@ -85,11 +133,22 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
 
             ),
 
-            ListTile(
-              title: Text('Logout'),
-              leading: Icon(Icons.logout),
+            InkWell(
+              onTap: (){
+                logout();
+                Navigator.of(context)
+                    .push(
+                    MaterialPageRoute(
+                        builder: (context) =>select_role())
+                );
+
+              },
+              child: ListTile(
+                title: Text('Logout'),
+                leading: Icon(Icons.logout),
 
 
+              ),
             ),
           ],
         ),
@@ -128,23 +187,32 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
                             ),
                           ),
                          
-                         Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            
-                            // ignore: deprecated_member_use
-                           child: Column(
-                             children:<Widget> [
-                               SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:128,),
-
-                               Text(" Profile "),
-                             ],
-                           ),
-
-
+                         InkWell(
+                           onTap: (){
+                             Navigator.of(context)
+                                 .push(
+                                 MaterialPageRoute(
+                                   builder: (context) =>FetchTeacherProfile(),)
+                             );
+                           },
+                           child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
                               ),
 
+                              // ignore: deprecated_member_use
+                             child: Column(
+                               children:<Widget> [
+                                 SvgPicture.network("https://image.flaticon.com/icons/svg/1904/1904425.svg",height:128,),
+
+                                 Text(" Profile "),
+                               ],
+                             ),
+
+
+                                ),
+                         ),
+
                             
 
 
@@ -152,22 +220,39 @@ List listitem = ['Extra Lectures','Syllabus','Pdf','Videos','Exam Notification']
 
 
 
-                     Card(
+                     InkWell(
+                       onTap: (){
+                         Navigator.of(context)
+                             .push(
+                             MaterialPageRoute(
+                               builder: (context) =>Add_Screen(),)
+                         );
 
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children:<Widget> [
-                                  Image.asset("assets/Images/Add2.png",
+                       },
+
+                       child: Card(
+
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+
+
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    children:<Widget> [
+
+
+                                      Image.asset("assets/Images/Add2.png",
+                                      ),
+
+                                      Text(" Add "),
+
+                                    ],
                                   ),
+                                ),
 
-                                  Text(" Add "),
-                                ],
-                              ),
                             ),
-                          ),
+                     ),
 
                          Card(
 

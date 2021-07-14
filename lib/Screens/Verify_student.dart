@@ -1,5 +1,14 @@
+
+
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
+import 'package:email_auth/email_auth.dart';
+import 'package:sppu_student_application/Screens/FetchSubject.dart';
+import 'package:sppu_student_application/Screens/HomeScreen.dart';
+import 'package:sppu_student_application/Screens/PasswordReset_student.dart';
+import 'package:sppu_student_application/Screens/Profile_student.dart';
+import 'package:sppu_student_application/Screens/register.dart';
+import 'package:sppu_student_application/Screens/years.dart';
 
 class Verify_student extends StatefulWidget{
   @override
@@ -9,6 +18,103 @@ class Verify_student extends StatefulWidget{
 }
 
 class _Verifystudent extends State<Verify_student> {
+final TextEditingController _emailController1=TextEditingController();
+final TextEditingController _emailController=TextEditingController();
+final TextEditingController _otpController=TextEditingController();
+void sendOTP() async{
+  EmailAuth.sessionName="Text Session";
+  var res=await EmailAuth.sendOtp(receiverMail:_emailController1.text);
+  if(res) {
+    showAlertDialog(context);
+  }
+
+
+}
+void verifyOTP() async{
+  var res= await EmailAuth.validate(receiverMail: _emailController1.text, userOTP:_otpController.text);
+  if(res){
+   showAlertDialog1(context);
+
+     Navigator.of(context)
+         .push(
+         MaterialPageRoute(
+           builder: (context) => Profile_student())
+     );
+  } else {
+    showAlertDialog2(context);
+  }
+
+}
+showAlertDialog(BuildContext context) {
+  AlertDialog alert = AlertDialog(
+    //title: Text("My title"),
+    content: Text("OTP Send Successfully"),
+    actions: [
+
+    ],
+  );
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+showAlertDialog1(BuildContext context) {
+  AlertDialog alert = AlertDialog(
+    //title: Text("My title"),
+    content: Text("Verified OTP Succeessfully"),
+    actions: [
+
+
+
+      ],
+    );
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
+
+
+
+showAlertDialog2(BuildContext context){
+  AlertDialog alert = AlertDialog(
+    //title: Text("My title"),
+    content: Text("InValid OTP !!!  Reset OTP again, Please Tap on Below Reset Button"),
+    actions: [
+
+    ],
+  );
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+showAlertDialog3(BuildContext context){
+  AlertDialog alert = AlertDialog(
+    //title: Text("My title"),
+    content: Text("Please Enter Valid Email"),
+    actions: [
+
+    ],
+  );
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +126,18 @@ class _Verifystudent extends State<Verify_student> {
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white,
-            ), onPressed: () {  },
+            ), onPressed: () {
+            Navigator.of(context)
+                .push(
+                MaterialPageRoute(
+                  builder: (context) =>register(),)
+            );
+          },
           ),
           title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal:85,vertical: 80),
+                padding: const EdgeInsets.symmetric(horizontal: 115,vertical: 80),
                 child: Image.asset("assets/Images/logo.jpeg",
                   height: 30,alignment: Alignment.center,),
               ),
@@ -68,7 +180,7 @@ class _Verifystudent extends State<Verify_student> {
                               Padding(
                                 padding: const EdgeInsets.all(22.0),
                                 child: Text(
-                                  "Verify Page",
+                                  "Verify Student",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 30,
@@ -136,14 +248,28 @@ class _Verifystudent extends State<Verify_student> {
           ),
           height: 60,
           child: TextField(
+           controller: _emailController1,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(left: 12,),
-              hintText: "Mail Address Register To University",
+              contentPadding: EdgeInsets.all(10.0),
+              hintText: "Email Adress",
+              suffixIcon: TextButton(
+
+                child: Text("Send OTP",
+
+                  style: TextStyle(
+                    color: Colors.black87,
+                  ),
+
+                ),
+                onPressed: ()=>{
+                  sendOTP(),
+                },
+              ),
               hintStyle: TextStyle(
                 color: Colors.black,
 
@@ -178,6 +304,7 @@ class _Verifystudent extends State<Verify_student> {
           ),
           height: 60,
           child: TextField(
+            controller: _otpController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -185,7 +312,7 @@ class _Verifystudent extends State<Verify_student> {
             decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(left: 12,),
-              hintText: "Verify Otp which sent on mail address",
+              hintText: "Enter OTP",
               hintStyle: TextStyle(
                 color: Colors.black,
 
@@ -208,14 +335,19 @@ class _Verifystudent extends State<Verify_student> {
       // ignore: deprecated_member_use
       child: RaisedButton(
         elevation: 5,
-        onPressed: () => print("Submit"),
+        onPressed: () => {
+          verifyOTP(),
+
+
+
+        },
         padding: EdgeInsets.all(10),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
         ),
         color: Colors.white,
         child: Text(
-          "Verify",
+          "Verify OTP",
           style: TextStyle(
             color: Color(0xff5ac18e),
             fontSize: 18,
@@ -224,6 +356,8 @@ class _Verifystudent extends State<Verify_student> {
           ),
 
         ),
+
+
       ),
 
     );
@@ -237,14 +371,21 @@ class _Verifystudent extends State<Verify_student> {
       // ignore: deprecated_member_use
       child: RaisedButton(
         elevation: 5,
-        onPressed: () => print("Reset"),
+        onPressed: () => {
+          //sendOTP(),
+        Navigator.of(context)
+            .push(
+        MaterialPageRoute(
+        builder: (context) =>Verify_student(),)
+        ),
+        },
         padding: EdgeInsets.all(10),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
         ),
         color: Colors.white,
         child: Text(
-          "Reset",
+          "Reset OTP",
           style: TextStyle(
             color: Color(0xff5ac18e),
             fontSize: 18,

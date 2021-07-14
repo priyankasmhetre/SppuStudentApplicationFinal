@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+import 'package:sppu_student_application/Screens/Fetch.dart';
+
 class updateProfile extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -28,9 +30,20 @@ class student_State extends State<updateProfile> {
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white,
 
-            ),
+            icon: Icon(Icons.arrow_back, color: Colors.white,
+            ),onPressed: () {
+            Navigator.of(context)
+                .push(
+                MaterialPageRoute(
+                    builder: (context) =>Fetch())
+            );
+
+          },
+
+
+
+
           ),
           title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
 

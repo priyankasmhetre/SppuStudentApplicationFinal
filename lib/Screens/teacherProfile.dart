@@ -2,6 +2,11 @@ import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:sppu_student_application/Screens/FetchSubject.dart';
+import 'package:sppu_student_application/Screens/TeacherHomeScreen.dart';
+import 'package:sppu_student_application/Screens/teacher_login.dart';
 class teacherProfile extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -12,6 +17,22 @@ class teacherProfile extends StatefulWidget{
 class student_State extends State<teacherProfile> {
   PickedFile imageFile;
   ImagePicker _picker = ImagePicker();
+  String Fullname;
+  String Email;
+  String ID;
+  int MobNO;
+  String BlooG;
+  String Adress;
+
+  addData1() {
+    Map<String,dynamic> demodata={"Name":Fullname,"Email":Email,"MobNO":MobNO,"ID":ID,
+      "BloodGroup":BlooG,
+    };
+    User user=FirebaseAuth.instance.currentUser;
+    FirebaseFirestore.instance.collection('TeacherProfile').doc(user.uid).set(demodata
+
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +50,13 @@ class student_State extends State<teacherProfile> {
           title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 115,vertical: 80),
-                child: Image.asset("assets/Images/logo.jpeg",
-                  height: 30,alignment: Alignment.center,),
-              ),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 115,vertical: 80),
+                  child: Image.asset("assets/Images/logo.jpeg",
+                    height: 30,alignment: Alignment.center,),
+                ),
+
             ],
 
           ),
@@ -248,6 +271,9 @@ class student_State extends State<teacherProfile> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              Fullname=value;
+            }),
             //   keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -306,6 +332,9 @@ class student_State extends State<teacherProfile> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              ID=value;
+            }),
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -359,6 +388,9 @@ class student_State extends State<teacherProfile> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              Email=value;
+            }),
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -413,6 +445,9 @@ class student_State extends State<teacherProfile> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              BlooG=value;
+            }),
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -468,6 +503,9 @@ class student_State extends State<teacherProfile> {
           ),
           height: 60,
           child: TextField(
+            onChanged: (value) => setState(() {
+              MobNO=int.parse(value);
+            }),
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
@@ -503,7 +541,14 @@ class student_State extends State<teacherProfile> {
       // ignore: deprecated_member_use
       child: RaisedButton(
         elevation: 5,
-        onPressed: () => print("Save"),
+        onPressed: (){
+          addData1();
+          Navigator.of(context)
+              .push(
+              MaterialPageRoute(
+                  builder: (context) => login_teacher())
+          );
+        },
         padding: EdgeInsets.all(15),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
@@ -526,102 +571,3 @@ class student_State extends State<teacherProfile> {
   }
 }
 
-/*
-class student_State extends State<Registration_student> {
-  @override
-  Widget build(BuildContext context){
-    final _screenSize = MediaQuery.of(context).size;
-    // TODO: implement build
-    return  Scaffold(
-      body:SingleChildScrollView(
-          child: Container(
-          height: _screenSize.height * 2.0,
-            child: GestureDetector(
-              child: Stack(
-                children:<Widget> [
-                  Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin:Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0x665ac18e),
-                            Color(0x995ac18e),
-                            Color(0xcc5ac18e),
-                            Color(0xff5ac18e),
-                          ]
-                      ),
-                    ),
-
-
-                   child: SingleChildScrollView(
-                     // physics: AlwaysScrollableScrollPhysics(),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 25,
-                        vertical: 120,
-                      ),
-                      child: Column(
-
-                        children:<Widget> [
-                          Padding(
-                            padding: const EdgeInsets.all(22.0),
-                            child: Text(
-                              "Registration Page",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight:FontWeight.bold,
-
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildName(),
-                          SizedBox(
-                            height: 10
-                          ),
-                          buildId(),
-
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildEmail(),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildDepartment(),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildCourse(),
-                          Loginbutton(),
-                          forgotbutton(),
-
-
-                        ],
-                      ),
-
-                    ),
-                 ),
-                ],
-              ),
-            )
-        )
-
-
-
-    ));
-
-
-
-
-
-
-
-  }
-}
-}*/

@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+import 'package:sppu_student_application/Screens/FetchTeacher_Profile.dart';
+
 class update_teacher_profile extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -26,7 +28,14 @@ class student_State extends State<update_teacher_profile> {
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white,
 
-            ),
+            ),onPressed: () {
+            Navigator.of(context)
+                .push(
+                MaterialPageRoute(
+                    builder: (context) =>FetchTeacherProfile())
+            );
+
+          },
           ),
           title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
@@ -520,102 +529,3 @@ class student_State extends State<update_teacher_profile> {
   }
 }
 
-/*
-class student_State extends State<Registration_student> {
-  @override
-  Widget build(BuildContext context){
-    final _screenSize = MediaQuery.of(context).size;
-    // TODO: implement build
-    return  Scaffold(
-      body:SingleChildScrollView(
-          child: Container(
-          height: _screenSize.height * 2.0,
-            child: GestureDetector(
-              child: Stack(
-                children:<Widget> [
-                  Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin:Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0x665ac18e),
-                            Color(0x995ac18e),
-                            Color(0xcc5ac18e),
-                            Color(0xff5ac18e),
-                          ]
-                      ),
-                    ),
-
-
-                   child: SingleChildScrollView(
-                     // physics: AlwaysScrollableScrollPhysics(),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 25,
-                        vertical: 120,
-                      ),
-                      child: Column(
-
-                        children:<Widget> [
-                          Padding(
-                            padding: const EdgeInsets.all(22.0),
-                            child: Text(
-                              "Registration Page",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight:FontWeight.bold,
-
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildName(),
-                          SizedBox(
-                            height: 10
-                          ),
-                          buildId(),
-
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildEmail(),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildDepartment(),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          buildCourse(),
-                          Loginbutton(),
-                          forgotbutton(),
-
-
-                        ],
-                      ),
-
-                    ),
-                 ),
-                ],
-              ),
-            )
-        )
-
-
-
-    ));
-
-
-
-
-
-
-
-  }
-}
-}*/

@@ -1,5 +1,8 @@
 import"package:flutter/material.dart";
 import 'package:flutter/services.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:sppu_student_application/Screens/Verify_student.dart';
+import 'package:sppu_student_application/Screens/login.dart';
 
 class PasswordReset extends StatefulWidget{
   @override
@@ -9,6 +12,10 @@ class PasswordReset extends StatefulWidget{
 }
 
 class _PasswordReset extends State<PasswordReset> {
+  FirebaseAuth _auth = FirebaseAuth.instance;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  final TextEditingController _emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,101 +27,109 @@ class _PasswordReset extends State<PasswordReset> {
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white,
-            ), onPressed: () {  },
+            ), onPressed: () {
+            Navigator.of(context)
+                .push(
+                MaterialPageRoute(
+                  builder: (context) => login(),)
+            );
+          },
           ),
           title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal:85,vertical: 80),
+                padding: const EdgeInsets.symmetric(horizontal: 115,vertical: 80),
                 child: Image.asset("assets/Images/logo.jpeg",
                   height: 30,alignment: Alignment.center,),
               ),
             ],
           ),
-          backgroundColor :  Color(0xcc5ac18e),
+          backgroundColor: Color(0xcc5ac18e),
         ),
         body: SingleChildScrollView(
-            child: Container(
-                height: _screenSize.height * 2.0,
-                child: GestureDetector(
-                  child: Stack(
-                    children: <Widget>[
-                      Container(
-                        height: double.infinity,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                Color(0x665ac18e),
-                                Color(0x995ac18e),
-                                Color(0xcc5ac18e),
-                                Color(0xff5ac18e),
-                              ]
+            child: Form(
+              key: _formKey,
+              child: Container(
+                  height: _screenSize.height * 2.0,
+                  child: GestureDetector(
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          height: double.infinity,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Color(0x665ac18e),
+                                  Color(0x995ac18e),
+                                  Color(0xcc5ac18e),
+                                  Color(0xff5ac18e),
+                                ]
+                            ),
                           ),
-                        ),
 
 
-                        child: SingleChildScrollView(
-                          // physics: AlwaysScrollableScrollPhysics(),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 25,
-                            vertical: 120,
-                          ),
-                          child: Column(
+                          child: SingleChildScrollView(
+                            // physics: AlwaysScrollableScrollPhysics(),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 25,
+                              vertical: 120,
+                            ),
+                            child: Column(
 
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.all(22.0),
-                                child: Text(
-                                  "Password Set Page",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.bold,
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(22.0),
+                                  child: Text(
+                                    "Password Reset Page",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
 
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              buildPassword(),
-                              SizedBox(
-                                  height: 10
-                              ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                               buildEmail(),
+                                SizedBox(
+                                    height: 10
+                                ),
 
-                              SizedBox(
-                                height: 10,
-                              ),
-                              buildConformPassword(),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Loginbutton(),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                //  buildConformPassword(),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Loginbutton(),
 
 
-                            ],
+                              ],
+                            ),
+
                           ),
-
                         ),
-                      ),
-                    ],
-                  ),
-                )
+                      ],
+                    ),
+                  )
+              ),
             )
 
 
         ));
   }
-}
 
 
-  Widget buildPassword() {
+  Widget buildEmail() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -134,19 +149,21 @@ class _PasswordReset extends State<PasswordReset> {
               ]
           ),
           height: 60,
-          child: TextField(
-            //   keyboardType: TextInputType.emailAddress,
+          child: TextFormField(
+            controller: _emailController,
+            keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.black87,
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(left: 12,),
-              hintText: "Password",
+              hintText: "Email",
               hintStyle: TextStyle(
                 color: Colors.black,
 
               ),
+
             ),
           ),
 
@@ -202,20 +219,26 @@ class _PasswordReset extends State<PasswordReset> {
 
   Widget Loginbutton() {
     return Container(
+
       padding: EdgeInsets.symmetric(vertical: 25),
       width: double.infinity,
 
       // ignore: deprecated_member_use
       child: RaisedButton(
         elevation: 5,
-        onPressed: () => print("Submit"),
+        onPressed: () =>
+        {
+          _auth.sendPasswordResetEmail(email: _emailController.text),
+        Navigator.of(context).pop(),
+          showAlertDialog(context),
+        },
         padding: EdgeInsets.all(15),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15)
         ),
         color: Colors.white,
         child: Text(
-          "Register",
+          "Send Request",
           style: TextStyle(
             color: Color(0xff5ac18e),
             fontSize: 18,
@@ -228,4 +251,22 @@ class _PasswordReset extends State<PasswordReset> {
 
     );
   }
+  showAlertDialog(BuildContext context){
+    AlertDialog alert = AlertDialog(
+      //title: Text("My title"),
+      content: Text("Send Email Request Successfully"),
+      actions: [
+
+      ],
+    );
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
+
+}
 
